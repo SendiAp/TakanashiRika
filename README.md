@@ -186,7 +186,7 @@ Untuk permulaan klik tombol ini
 </details>  
 
 ## Credits
-Bot didasarkan pada karya asli yang dilakukan oleh [PaulSonOfLars](https://github.com/SendiAp)
+Bot didasarkan pada karya asli yang dilakukan oleh [SendiAp](https://github.com/SendiAp)
 
 
 
