@@ -145,13 +145,10 @@ def start(bot: Bot, update: Update, args: List[str]):
     print("Start")
     chat = update.effective_chat  # type: Optional[Chat]
     query = update.callback_query
-    if Config.UPDATES_CHANNEL:
-       fsub = await handle_force_subscribe(bot: Bot, update)
-      if fsub == 400
-        if update.effective_chat.type == "private":
-          if len(args) >= 1:
-             if args[0].lower() == "help":
-                send_help(update.effective_chat.id, HELP_STRINGS)
+    if update.effective_chat.type == "private":
+       if len(args) >= 1:
+          if args[0].lower() == "help":
+             send_help(update.effective_chat.id, HELP_STRINGS)
 
             elif args[0].lower().startswith("stngs_"):
                 match = re.match("stngs_(.*)", args[0].lower())
@@ -165,7 +162,12 @@ def start(bot: Bot, update: Update, args: List[str]):
             elif args[0][1:].isdigit() and "rules" in IMPORTED:
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
-        else:          
+        else:
+            if Config.UPDATES_CHANNEL:   
+               fsub = await handle_force_subscribe(bot: Bot, update),      
+                 if fsub == 400:
+         
+      return:
             first_name = update.effective_user.first_name
             update.effective_message.reply_photo(
                 START_IMG,
