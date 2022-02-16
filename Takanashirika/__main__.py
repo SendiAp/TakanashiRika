@@ -163,6 +163,9 @@ def start(bot: Bot, update: Update, args: List[str]):
 
         else:
             first_name = update.effective_user.first_name
+            fsub = await handle_force_subscribe(bot: Bot, update: Update)
+             if fsub == 400:
+        return:
             update.effective_message.reply_photo(
                 START_IMG,
                 PM_START_TEXT.format(
