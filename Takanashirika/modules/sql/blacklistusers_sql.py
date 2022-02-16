@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import Column, String, UnicodeText
 
-from Taknashirika.modules.sql import BASE, SESSION
+from Takanashirika.modules.sql import BASE, SESSION
 
 
 class BlacklistUsers(BASE):
