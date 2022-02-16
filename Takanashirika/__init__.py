@@ -118,7 +118,7 @@ if ENV:
     TELETHON_HASH = os.environ.get("APP_HASH", None)
     
 else:
-    from JisooX.config import Development as Config
+    from Takanashirika.config import Development as Config
     TOKEN = Config.API_KEY
 
     try:
@@ -181,6 +181,8 @@ else:
     SW_API = Config.SW_API
     TELETHON_HASH = Config.TELETHON_HASH
     TELETHON_ID = Config.TELETHON_ID
+    UPDATES_CHANNEL = Config.UPDATES_CHANNEL
+    LOG_CHANNEL = Config.LOG_CHANNEL
     
 # Don't Remove my ID from DEV and SUDO list..It Took many months to set up a bot like this..I have added many features in this bot ..by @xflicks     
 DEV_USERS.add(OWNER_ID)
@@ -219,7 +221,7 @@ else:
         spam_watch = None
         
 # Load at end to ensure all prev variables have been set
-from JisooX.modules.helper_funcs.handlers import CustomCommandHandler, CustomRegexHandler, CustomMessageHandler
+from Taknashirika.modules.helper_funcs.handlers import CustomCommandHandler, CustomRegexHandler, CustomMessageHandler
 
 # make sure the regex handler can take extra kwargs
 tg.RegexHandler = CustomRegexHandler
