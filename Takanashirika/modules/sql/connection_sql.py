@@ -4,8 +4,8 @@ from typing import Union
 
 from sqlalchemy import Column, String, Boolean, UnicodeText, Integer, func, distinct
 
-from Takahashirika.modules.helper_funcs.msg_types import Types
-from Takahashirika.modules.sql import SESSION, BASE
+from Takanashirika.modules.helper_funcs.msg_types import Types
+from Takanashirika.modules.sql import SESSION, BASE
 
 class ChatAccessConnectionSettings(BASE):
     __tablename__ = "access_connection"
