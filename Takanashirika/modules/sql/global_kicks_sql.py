@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import Column, UnicodeText, Integer, String, Boolean
 
-from Taknashirika.modules.sql import BASE, SESSION
+from Takanashirika.modules.sql import BASE, SESSION
 
 class GloballyKickedUsers(BASE):
     __tablename__ = "gkicks"
