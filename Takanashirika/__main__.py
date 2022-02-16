@@ -163,11 +163,6 @@ def start(bot: Bot, update: Update, args: List[str]):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
         else:
-            if Config.UPDATES_CHANNEL:   
-               fsub = await handle_force_subscribe(bot: Bot, update),      
-                 if fsub == 400:
-         
-      return:
             first_name = update.effective_user.first_name
             update.effective_message.reply_photo(
                 START_IMG,
