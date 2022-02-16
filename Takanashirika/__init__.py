@@ -202,7 +202,7 @@ print("[TakanashiRika]: INITIALZING AIOHTTP SESSION")
 aiohttpsession = ClientSession()
 print("[TakanashiRika]: INITIALIZING ARQ CLIENT")
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
-pbot = Client("Takanashirika", api_id=TELETHON_ID, api_hash=TELETHON_HASH, bot_token=TOKEN)
+pbot = Client("Takanashirika", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 
 apps = []
 apps.append(pbot)
