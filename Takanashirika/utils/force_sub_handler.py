@@ -2,9 +2,9 @@ import asyncio
 from Takanashirika import TOKEN, BOT_USERNAME, LOG_CHANNEL, UPDATES_CHANNEL
 from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from telegram import Bot, Update, ParseMode
 
-
-async def handle_force_subscribe(bot, cmd):
+async def handle_force_subscribe(bot: Bot, update: Update):
     try:
         invite_link = await bot.create_chat_invite_link(int(Config.UPDATES_CHANNEL))
     except FloodWait as e:
@@ -15,7 +15,7 @@ async def handle_force_subscribe(bot, cmd):
         if user.status == "kicked":
             await bot.send_message(
                 chat_id=cmd.from_user.id,
-                text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/linux_repo).",
+                text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/Rose_Userbot).",
                 parse_mode="markdown",
                 disable_web_page_preview=True
             )
