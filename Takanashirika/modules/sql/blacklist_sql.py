@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import func, distinct, Column, String, UnicodeText
 
-from Taknashirika.modules.sql import SESSION, BASE
+from Takanashirika.modules.sql import SESSION, BASE
 
 
 class BlackListFilters(BASE):
