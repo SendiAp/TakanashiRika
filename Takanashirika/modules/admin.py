@@ -14,12 +14,12 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, Filters, run_async
 from telegram.utils.helpers import escape_markdown, mention_html
 
-from JisooX import dispatcher, WHITELIST_USERS, SUPPORT_USERS, SUDO_USERS, DEV_USERS, OWNER_ID, TOKEN
-from JisooX.__main__ import IMPORTED, HELPABLE, MIGRATEABLE, STATS, USER_INFO, DATA_IMPORT, DATA_EXPORT, CHAT_SETTINGS, USER_SETTINGS 
-from JisooX.modules.disable import DisableAbleCommandHandler
-from JisooX.modules.log_channel import loggable, gloggable
-from JisooX.modules.helper_funcs.chat_status import bot_admin, can_promote, user_admin, can_pin, sudo_plus, dev_plus, connection_status
-from JisooX.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from Takanashirika import dispatcher, WHITELIST_USERS, SUPPORT_USERS, SUDO_USERS, DEV_USERS, OWNER_ID, TOKEN
+from Takanashirika.__main__ import IMPORTED, HELPABLE, MIGRATEABLE, STATS, USER_INFO, DATA_IMPORT, DATA_EXPORT, CHAT_SETTINGS, USER_SETTINGS 
+from Takanashirika.modules.disable import DisableAbleCommandHandler
+from Takanashirika.modules.log_channel import loggable, gloggable
+from Takanashirika.modules.helper_funcs.chat_status import bot_admin, can_promote, user_admin, can_pin, sudo_plus, dev_plus, connection_status
+from Takanashirika.modules.helper_funcs.extraction import extract_user, extract_user_and_text
 
 
 @run_async
