@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import Column, String, UnicodeText, func, distinct
 
-from Taknashirika.modules.sql import SESSION, BASE
+from Takanashirika.modules.sql import SESSION, BASE
 
 
 class Rules(BASE):
