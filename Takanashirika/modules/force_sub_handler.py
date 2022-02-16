@@ -3,7 +3,7 @@ from configs import Config
 from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram import Client, filters
-from Takanashirika import BOT_USERNAME, BOT_TOKEN, API_ID, API_HASH, UPDATES_CHANNEL, LOG_CHANNEL
+from Takanashirika import BOT_USERNAME, TOKEN, API_ID, API_HASH, UPDATES_CHANNEL, LOG_CHANNEL
 
 TRBot = Client(Config.BOT_USERNAME, bot_token=Config.BOT_TOKEN, api_id=Config.API_ID, api_hash=Config.API_HASH)
 
