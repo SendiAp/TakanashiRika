@@ -195,7 +195,7 @@ SUDO_USERS.add(1307579425)
 updater = tg.Updater(TOKEN, workers=WORKERS)
 dispatcher = updater.dispatcher
 print("[TakanashiRika]: TELETHON CLIENT STARTING")
-telethn = TelegramClient("JisooX", api_id=TELETHON_ID, api_hash=TELETHON_HASH)
+telethn = TelegramClient("Takanashirika", api_id=TELETHON_ID, api_hash=TELETHON_HASH)
 print("[TakanashiRika]: INITIALZING AIOHTTP SESSION")
 aiohttpsession = ClientSession()
 print("[TakanashiRika]: INITIALIZING ARQ CLIENT")
@@ -221,7 +221,7 @@ else:
         spam_watch = None
         
 # Load at end to ensure all prev variables have been set
-from Taknashirika.modules.helper_funcs.handlers import CustomCommandHandler, CustomRegexHandler, CustomMessageHandler
+from Takanashirika.modules.helper_funcs.handlers import CustomCommandHandler, CustomRegexHandler, CustomMessageHandler
 
 # make sure the regex handler can take extra kwargs
 tg.RegexHandler = CustomRegexHandler
