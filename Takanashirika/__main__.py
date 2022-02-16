@@ -50,6 +50,27 @@ Hello *{}*!
 Hit the /help to see available command.
 """
 
+buttons = [
+    [
+        InlineKeyboardButton(text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅ​", callback_data="help_back"),
+    ],
+    [
+        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="Skyzu_"),
+        InlineKeyboardButton(text="ᴛʀʏ ɪɴʟɪɴᴇ​", switch_inline_query_current_chat=""),
+    ],
+    [
+        InlineKeyboardButton(
+            text="sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ​", url="https://github.com/Skyzu/SkyzuRobot"
+        ),
+        InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ​", url=f"https://t.me/{SUPPORT_CHAT}"),
+    ],
+    [
+        InlineKeyboardButton(
+            text="➗ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ​ ➗",
+            url=f"t.me/{dispatcher.bot.username}?startgroup=new",
+        ),
+    ],
+]
 
 HELP_STRINGS = """
 Click the button below for a description of a specific command.
@@ -164,50 +185,17 @@ def start(bot: Bot, update: Update, args: List[str]):
 
         else:
             first_name = update.effective_user.first_name
-            update.effective_message.reply_photo(
-                START_IMG,
+            update.effective_message.reply_text(
                 PM_START_TEXT.format(
-                    escape_markdown(first_name), escape_markdown(bot.first_name),
+                    escape_markdown(first_name),
+                    escape_markdown(uptime),
+                    sql.num_users(),
+                    sql.num_chats(),
                 ),
+                reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
+                timeout=60,
                 disable_web_page_preview=True,
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(
-                                text="➗ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ​ ➗",
-                                url="t.me/Takanashi_RikkaBot?startgroup=true".format(
-                                    bot.first_name,
-                                ),
-                            ),
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                text="💡 Support",
-                                url=f"https://t.me/Rose_Userbot",
-                            ),
-                            InlineKeyboardButton(
-                                text="🚨 Updates",
-                                url="https://t.me/SpinningEart",
-                            ),
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                text="🎧 Music Bot",
-                                url="https://t.me/SpinningEarth1_Bot",
-                            ),
-                            InlineKeyboardButton(
-                                text="🎥 Stream Bot",
-                                url="https://t.me/SpinningEarth2_Bot",
-                            ),
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅ​", callback_data="help_button",
-                            ),
-                        ],
-                    ],
-                ),
             )
     else:
         update.effective_message.reply_text(
