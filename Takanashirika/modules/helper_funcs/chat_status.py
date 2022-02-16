@@ -308,5 +308,5 @@ def connection_status(func):
 
 
 #Workaround for circular import with connection.py
-from JisooX.modules import connection
+from Takanashirika.modules import connection
 connected = connection.connected
