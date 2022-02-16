@@ -164,6 +164,7 @@ def test(bot: Bot, update: Update):
 @run_async
 def start(bot: Bot, update: Update, args: List[str]):
     print("Start")
+    uptime = get_readable_time((time.time() - StartTime))
     chat = update.effective_chat  # type: Optional[Chat]
     query = update.callback_query
     if update.effective_chat.type == "private":
