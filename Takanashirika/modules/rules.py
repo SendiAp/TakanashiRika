@@ -94,10 +94,10 @@ def __chat_settings__(chat_id, user_id):
 
 
 __help__ = """
- - /rules: dapatkan aturan untuk obrolan ini.
+ ✘ /rules: dapatkan aturan untuk obrolan ini.
 *Admin only:*
- - /setrules <aturan Anda di sini>: tetapkan aturan untuk obrolan ini.
- - /clearrules: hapus aturan untuk obrolan ini.
+ ✘ /setrules <aturan Anda di sini>: tetapkan aturan untuk obrolan ini.
+ ✘ /clearrules: hapus aturan untuk obrolan ini.
 """
 
 __mod_name__ = "Rules"
