@@ -20,7 +20,7 @@ import Takanashirika.modules.sql.blacklist_sql as blacklistsql
 from Takanashirika.modules.sql import disable_sql as disabledsql
 from Takanashirika.modules.sql import cust_filters_sql as filtersql
 import Takanashirika.modules.sql.welcome_sql as welcsql
-import JisooX.modules.sql.locks_sql as locksql
+import Takanashirika.modules.sql.locks_sql as locksql
 from Takanashirika.modules.connection import connected
 
 @run_async
