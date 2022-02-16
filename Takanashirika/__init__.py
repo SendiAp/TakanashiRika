@@ -116,6 +116,8 @@ if ENV:
     SW_API = os.environ.get('SW_API', None)
     TELETHON_ID = int(os.environ.get("APP_ID", None))
     TELETHON_HASH = os.environ.get("APP_HASH", None)
+    UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", None)
+    LOG_CHANNEL = os.environ.get("LOG_CHANNEL", None)
     
 else:
     from Takanashirika.config import Development as Config
