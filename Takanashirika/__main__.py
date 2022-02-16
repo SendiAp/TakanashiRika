@@ -41,19 +41,17 @@ from Takanashirika.modules.connection import connect_button
 
 
 PM_START_TEXT = """
-Hello *{}*
-I Am A Bot That Will Help Make It Easy 
-For Your Groups, Add Me To Your Groups And Make Admin.
-"""
-
-
-HELP_STRINGS = """
 Hello *{}*!
 ────────────────────────
 ✪ I'm an anime theme bot designed to help manage your telegram group with a lot features.
 ✪ Maintained by @pikyus1 ✨
 ────────────────────────
 Hit the /help to see available command.
+"""
+
+
+HELP_STRINGS = """
+Click the button below for a description of a specific command.
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
 
@@ -204,7 +202,7 @@ def start(bot: Bot, update: Update, args: List[str]):
                         ],
                         [
                             InlineKeyboardButton(
-                                text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅ​", callback_data="help_back",
+                                text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅ​", callback_data="help_button",
                             ),
                         ],
                     ],
@@ -271,7 +269,7 @@ def help_button(bot: Bot, update: Update):
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="Back", callback_data="help_back")]],
+                    [[InlineKeyboardButton(text="🔙", callback_data="help_back")]],
                 ),
             )
 
@@ -388,7 +386,7 @@ def settings_button(bot: Bot, update: Update):
             query.message.reply_text(text=text,
                                      parse_mode=ParseMode.MARKDOWN,
                                      reply_markup=InlineKeyboardMarkup(
-                                         [[InlineKeyboardButton(text="Back",
+                                         [[InlineKeyboardButton(text="🔙",
                                                                 callback_data="stngs_back({})".format(chat_id))]]))
 
         elif prev_match:
