@@ -592,16 +592,12 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
    
-    source_handler = CommandHandler("source", source)
-    
-
     # dispatcher.add_handler(test_handler)
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(help_handler)
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
-    dispatcher.add_handler(source_handler)
     dispatcher.add_handler(IMDB_HANDLER)
     dispatcher.add_handler(IMDB_SEARCHDATAHANDLER)
     
