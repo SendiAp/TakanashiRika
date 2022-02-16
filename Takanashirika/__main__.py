@@ -164,7 +164,7 @@ def start(bot: Bot, update: Update, args: List[str]):
 
         else:          
             first_name = update.effective_user.first_name
-            update.effective_message.reply(handle_force_subscribe),
+            update.effective_message.reply_text(handle_force_subscribe),
             update.effective_message.reply_photo(
                 START_IMG,
                 PM_START_TEXT.format(
