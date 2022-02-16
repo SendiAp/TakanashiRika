@@ -163,7 +163,7 @@ def start(bot: Bot, update: Update, args: List[str]):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
         else:
-            await handle_force_subscribe(bot: Bot, update: Update)
+            await handle_force_subscribe          
             first_name = update.effective_user.first_name
             update.effective_message.reply_photo(
                 START_IMG,
