@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import Column, String, UnicodeText, Boolean
 
-from Takahashirika.modules.sql import BASE, SESSION
+from Takanashirika.modules.sql import BASE, SESSION
 
 
 class CleanerBlueTextChatSettings(BASE):
