@@ -9,11 +9,11 @@ import platform
 import sys
 import traceback
 import requests
+import Takanashirika.modules.sql.users_sql as sql
 from parsel import Selector
 import json
 from urllib.request import urlopen
 from sys import argv
-from Takanashirika.utils import handle_force_subscribe
 from telegram import Message, Chat, Update, Bot, User
 from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup, KeyboardButton
 from telegram.error import Unauthorized, BadRequest, TimedOut, NetworkError, ChatMigrated, TelegramError
