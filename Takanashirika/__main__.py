@@ -146,9 +146,9 @@ def start(bot: Bot, update: Update, args: List[str]):
     chat = update.effective_chat  # type: Optional[Chat]
     query = update.callback_query
     if update.effective_chat.type == "private":
-       if len(args) >= 1:
-          if args[0].lower() == "help":
-             send_help(update.effective_chat.id, HELP_STRINGS)
+        if len(args) >= 1:
+            if args[0].lower() == "help":
+                send_help(update.effective_chat.id, HELP_STRINGS)
 
             elif args[0].lower().startswith("stngs_"):
                 match = re.match("stngs_(.*)", args[0].lower())
