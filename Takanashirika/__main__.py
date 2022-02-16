@@ -18,7 +18,7 @@ from telegram.error import Unauthorized, BadRequest, TimedOut, NetworkError, Cha
 from telegram.ext import CommandHandler, Filters, MessageHandler, CallbackQueryHandler
 from telegram.ext.dispatcher import run_async, DispatcherHandlerStop, Dispatcher
 from telegram.utils.helpers import escape_markdown
-from Taknashirika import (
+from Takanashirika import (
     dispatcher,
     updater,
     TOKEN,
@@ -33,11 +33,11 @@ from Taknashirika import (
     ALLOW_EXCL,
     telethn,
 )
-from Taknashirika.modules import ALL_MODULES
-from Taknashirika.modules.helper_funcs.chat_status import is_user_admin
-from Taknashirika.modules.helper_funcs.misc import paginate_modules
-from Taknashirika.modules.connection import connected
-from Taknashirika.modules.connection import connect_button
+from Takanashirika.modules import ALL_MODULES
+from Takanashirika.modules.helper_funcs.chat_status import is_user_admin
+from Takanashirika.modules.helper_funcs.misc import paginate_modules
+from Takanashirika.modules.connection import connected
+from Takanashirika.modules.connection import connect_button
 
 
 PM_START_TEXT = """
