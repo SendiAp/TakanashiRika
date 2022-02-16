@@ -12,6 +12,7 @@ from parsel import Selector
 import json
 from urllib.request import urlopen
 from sys import argv
+from Takanashirika.utils import handle_force_subscribe
 from telegram import Message, Chat, Update, Bot, User
 from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup, KeyboardButton
 from telegram.error import Unauthorized, BadRequest, TimedOut, NetworkError, ChatMigrated, TelegramError
@@ -162,10 +163,8 @@ def start(bot: Bot, update: Update, args: List[str]):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
         else:
+            await handle_force_subscribe(bot: Bot, update: Update)
             first_name = update.effective_user.first_name
-            fsub = await handle_force_subscribe(bot: Bot, update: Update)
-             if fsub == 400:
-        return:
             update.effective_message.reply_photo(
                 START_IMG,
                 PM_START_TEXT.format(
