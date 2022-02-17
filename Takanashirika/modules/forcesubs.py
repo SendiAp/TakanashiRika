@@ -8,6 +8,7 @@ from pyrogram.errors.exceptions.bad_request_400 import (
     UsernameNotOccupied,
     UserNotParticipant,
 )
+from telegram import Message, Chat, Update, Bot
 from telegram.ext import CommandHandler, MessageHandler, Filters, run_async
 from pyrogram.types import ChatPermissions, InlineKeyboardButton, InlineKeyboardMarkup
 
