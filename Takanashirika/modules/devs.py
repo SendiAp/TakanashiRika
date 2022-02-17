@@ -7,10 +7,10 @@ from telegram import Bot, Update, ParseMode, TelegramError
 from telegram.ext import CommandHandler, run_async
 from telegram.utils.helpers import mention_html
 
-from JisooX import dispatcher, WHITELIST_USERS, SUPPORT_USERS, SUDO_USERS, DEV_USERS, OWNER_ID
-from JisooX.modules.helper_funcs.chat_status import whitelist_plus, dev_plus
-from JisooX.modules.helper_funcs.extraction import extract_user
-from JisooX.modules.log_channel import gloggable
+from Takanashirika import dispatcher, WHITELIST_USERS, SUPPORT_USERS, SUDO_USERS, DEV_USERS, OWNER_ID
+from Takanashirika.modules.helper_funcs.chat_status import whitelist_plus, dev_plus
+from Takanashirika.modules.helper_funcs.extraction import extract_user
+from Takanashirika.modules.log_channel import gloggable
 
 ELEVATED_USERS_FILE = os.path.join(os.getcwd(), 'JisooX/elevated_users.json')
 
