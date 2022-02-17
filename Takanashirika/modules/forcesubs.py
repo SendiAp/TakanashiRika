@@ -121,7 +121,7 @@ def _check_member(client, message):
 
 
 @run_async
-def config(client, message):
+def fsub(client, message):
     user = client.get_chat_member(message.chat.id, message.from_user.id)
     if user.status == "creator" or user.user.id in SUDO_USERS:
         chat_id = message.chat.id
