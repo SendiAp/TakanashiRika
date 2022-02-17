@@ -48,6 +48,7 @@ pybase64
 hachoir
 validators
 youtube-search-python
+youtube_search
 ffmpeg
 markdown2>=2.4.0
 apscheduler
