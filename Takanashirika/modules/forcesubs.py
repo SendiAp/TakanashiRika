@@ -123,7 +123,7 @@ def _check_member(bot: Bot, update: Update):
 
 @run_async
 def foce_sub(bot: Bot, update: Update):
-    user = update.get_chat_member(message.chat.id, message.from_user.id)
+    user = update.get_chat_member(update.chat.id, update.from_user.id)
     if user.status == "creator" or user.user.id in SUDO_USERS:
         chat_id = update.chat.id
         if len(message.command) > 1:
@@ -137,11 +137,11 @@ def foce_sub(bot: Bot, update: Update):
                     "**Unmuting all members who are muted by me...**"
                 )
                 try:
-                    for chat_member in bot.get_chat_members(
-                        message.chat.id, filter="restricted"
+                    for chat_member in update.get_chat_members(
+                        update.chat.id, filter="restricted"
                     ):
-                        if chat_member.restricted_by.id == (client.get_me()).id:
-                            bot.unban_chat_member(chat_id, chat_member.user.id)
+                        if chat_member.restricted_by.id == (update.get_me()).id:
+                            update.unban_chat_member(chat_id, chat_member.user.id)
                             time.sleep(1)
                     sent_message.edit("✅ **Unmuted all members who are muted by me.**")
                 except ChatAdminRequired:
