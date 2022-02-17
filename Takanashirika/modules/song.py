@@ -6,7 +6,7 @@ from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message, Voice
 from youtube_search import YoutubeSearch
 
 from Takanashirika.modules.helper_funcs.chat_status import bot_admin
-from Takanashirika import BOT_USERNAME, app
+from Takanashirika import BOT_USERNAME, pbot
 from Takanashirika.Inline import song_download_markup, song_markup
 from Takanashirika.utils import get_url
 from Takanashirika.utils import get_yt_info_query, get_yt_info_query_slider
@@ -14,7 +14,7 @@ from Takanashirika.utils import get_yt_info_query, get_yt_info_query_slider
 loop = asyncio.get_event_loop()
 
 
-@app.on_message(
+@pbot.on_message(
     filters.command(["song", f"song@{BOT_USERNAME}"]) & filters.group
 )
 @bot_admin
@@ -72,7 +72,7 @@ async def play(_, message: Message):
         )
 
 
-@app.on_callback_query(filters.regex("qwertyuiopasdfghjkl"))
+@pbot.on_callback_query(filters.regex("qwertyuiopasdfghjkl"))
 async def qwertyuiopasdfghjkl(_, CallbackQuery):
     print("234")
     await CallbackQuery.answer()
@@ -86,7 +86,7 @@ async def qwertyuiopasdfghjkl(_, CallbackQuery):
     )
 
 
-@app.on_callback_query(filters.regex(pattern=r"song_right"))
+@pbot.on_callback_query(filters.regex(pattern=r"song_right"))
 async def song_right(_, CallbackQuery):
     callback_data = CallbackQuery.data.strip()
     callback_request = callback_data.split(None, 1)[1]
