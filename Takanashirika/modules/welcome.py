@@ -880,29 +880,29 @@ def __chat_settings__(chat_id, user_id):
 __help__ = """
 {}
 Commands:
- - /casver: Returns the API version that the bot is currently running
- - /cascheck: Checks you or another user for CAS BAN
+ ✘ /casver: Returns the API version that the bot is currently running
+ ✘ /cascheck: Checks you or another user for CAS BAN
 *Admin only:*
- - /welcome <on/off>: enable/disable welcome messages.
- - /welcome: shows current welcome settings.
- - /welcome noformat: shows current welcome settings, without the formatting - useful to recycle your welcome messages!
- - /goodbye -> same usage and args as /welcome.
- - /setwelcome <sometext>: set a custom welcome message. If used replying to media, uses that media.
- - /setgoodbye <sometext>: set a custom goodbye message. If used replying to media, uses that media.
- - /resetwelcome: reset to the default welcome message.
- - /resetgoodbye: reset to the default goodbye message.
- - /cleanwelcome <on/off>: On new member, try to delete the previous welcome message to avoid spamming the chat.
- - /rmjoin <on/off>: when someone joins, try to delete the *user* joined the group message.
- - /safemode <on/off>: all users that join, get muted; a button gets added to the welcome message for them to unmute themselves. This proves they aren't a bot! This will also restrict users ability to post media for 24 hours.
- - /welcomehelp: view more formatting information for custom welcome/goodbye messages.
- - /setcas <on/off/true/false>: Enables/disables CAS Checking on welcome
- - /getcas: Gets the current CAS settings
- - /setban <on/off/true/false>: Enables/disables autoban on CAS banned user detected.
- - /setdefense <on/off/true/false>: Turns on defense mode, will kick any new user automatically.
- - /getdefense: gets the current defense setting
- - /kicktime: gets the auto-kick time setting
- - /setkicktime: sets new auto-kick time value (between 30 and 900 seconds)
- - /cas: Info about CAS. (What is CAS?)
+ ✘ /welcome <on/off>: enable/disable welcome messages.
+ ✘ /welcome: shows current welcome settings.
+ ✘ /welcome noformat: shows current welcome settings, without the formatting - useful to recycle your welcome messages!
+ ✘ /goodbye -> same usage and args as /welcome.
+ ✘ /setwelcome <sometext>: set a custom welcome message. If used replying to media, uses that media.
+ ✘ /setgoodbye <sometext>: set a custom goodbye message. If used replying to media, uses that media.
+ ✘ /resetwelcome: reset to the default welcome message.
+ ✘ /resetgoodbye: reset to the default goodbye message.
+ ✘ /cleanwelcome <on/off>: On new member, try to delete the previous welcome message to avoid spamming the chat.
+ ✘ /rmjoin <on/off>: when someone joins, try to delete the *user* joined the group message.
+ ✘ /safemode <on/off>: all users that join, get muted; a button gets added to the welcome message for them to unmute themselves. This proves they aren't a bot! This will also restrict users ability to post media for 24 hours.
+ ✘ /welcomehelp: view more formatting information for custom welcome/goodbye messages.
+ ✘ /setcas <on/off/true/false>: Enables/disables CAS Checking on welcome
+ ✘ /getcas: Gets the current CAS settings
+ ✘ /setban <on/off/true/false>: Enables/disables autoban on CAS banned user detected.
+ ✘ /setdefense <on/off/true/false>: Turns on defense mode, will kick any new user automatically.
+ ✘ /getdefense: gets the current defense setting
+ ✘ /kicktime: gets the auto-kick time setting
+ ✘ /setkicktime: sets new auto-kick time value (between 30 and 900 seconds)
+ ✘ /cas: Info about CAS. (What is CAS?)
 """.format(WELC_HELP_TXT)
 
 __mod_name__ = "GREETINGS"
