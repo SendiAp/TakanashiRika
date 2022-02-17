@@ -3,7 +3,7 @@ import threading
 from sqlalchemy import Column, String, UnicodeText, func, distinct, Integer, Boolean
 from telegram.error import BadRequest, TelegramError, Unauthorized
 
-from Taknashirika import dispatcher
+from Takanashirika import dispatcher
 from Takanashirika.modules.sql import SESSION, BASE
 
 
