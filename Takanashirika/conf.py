@@ -1,5 +1,5 @@
 from envparse import env
-from Taknashirika import LOGGER
+from Takanashirika import LOGGER
 
 DEFAULTS = {
     "LOAD_MODULES": True,
