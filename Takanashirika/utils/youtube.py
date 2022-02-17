@@ -1,8 +1,5 @@
 from youtubesearchpython import VideosSearch
 
-from Takanashirika.utils import time_to_seconds
-
-
 def get_yt_info_id(videoid):
     url = f"https://www.youtube.com/watch?v={videoid}"
     results = VideosSearch(url, limit=1)
