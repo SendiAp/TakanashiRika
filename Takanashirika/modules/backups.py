@@ -237,7 +237,7 @@ def export_data(bot: Bot, update: Update, chat_data):
     # Backing up
     backup[chat_id] = {'bot': bot.id, 'hashes': {'info': {'rules': rules}, 'extra': notes, 'blacklist': bl, 'disabled': disabledcmd, 'locks': locked}}
     baccinfo = json.dumps(backup, indent=4)
-    f=open("JisooX{}.backup".format(chat_id), "w")
+    f=open("Takanashirika{}.backup".format(chat_id), "w")
     f.write(str(baccinfo))
     f.close()
     bot.sendChatAction(current_chat_id, "upload_document")
@@ -247,7 +247,7 @@ def export_data(bot: Bot, update: Update, chat_data):
     except BadRequest:
         pass
     bot.sendDocument(current_chat_id, document=open('JisooX{}.backup'.format(chat_id), 'rb'), caption="*Successfully imported backup:*\nChat: `{}`\nChat ID: `{}`\nOn: `{}`\n\nNote: This  is specially made for notes.".format(chat.title, chat_id, tgl), timeout=360, reply_to_message_id=msg.message_id, parse_mode=ParseMode.MARKDOWN)
-    os.remove("JisooX{}.backup".format(chat_id)) # Cleaning file
+    os.remove("Takanashirika{}.backup".format(chat_id)) # Cleaning file
 
 
 # Temporary data
