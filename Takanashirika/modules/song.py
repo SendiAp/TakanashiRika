@@ -20,12 +20,12 @@ async def download_video(v_url):
 
     lazy = v_url ; sender = await lazy.get_sender() ; me = await lazy.client.get_me()
 
-    if lazy.sender_chat:
+    if not sender.id == me.id:
         return await lazy.edit(
             "You're an __Anonymous Admin__ in this Chat Group!\nRevert back to User Account From Admin Rights."
         )
-    await message.delete()
-    url = get_url(message)
+    await lazy.delete()
+    url = get_url(lazy)
     if url:
         mystic = await lazy.edit("🔄 Memproses URL... Harap Tunggu!")
         query = lazy.text.split(None, 1)[1]
