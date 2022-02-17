@@ -118,7 +118,8 @@ if ENV:
     TELETHON_HASH = os.environ.get("APP_HASH", None)
     UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", None)
     LOG_CHANNEL = os.environ.get("LOG_CHANNEL", None)
-    
+    AI_API_KEY = os.environ.get("AI_API_KEY", None)
+
 else:
     from Takanashirika.config import Development as Config
     TOKEN = Config.API_KEY
@@ -185,6 +186,7 @@ else:
     TELETHON_ID = Config.TELETHON_ID
     UPDATES_CHANNEL = Config.UPDATES_CHANNEL
     LOG_CHANNEL = Config.LOG_CHANNEL
+    AI_API_KEY = Config.AI_API_KEY
     
 # Don't Remove my ID from DEV and SUDO list..It Took many months to set up a bot like this..I have added many features in this bot ..by @xflicks     
 DEV_USERS.add(OWNER_ID)
