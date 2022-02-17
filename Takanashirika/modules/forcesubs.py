@@ -8,6 +8,7 @@ from pyrogram.errors.exceptions.bad_request_400 import (
     UsernameNotOccupied,
     UserNotParticipant,
 )
+from telegram.ext import CommandHandler, MessageHandler, Filters, run_async
 from pyrogram.types import ChatPermissions, InlineKeyboardButton, InlineKeyboardMarkup
 
 from Takanashirika import SUDO_USERS
@@ -21,7 +22,7 @@ static_data_filter = filters.create(
 )
 
 
-@pbot.on_callback_query(static_data_filter)
+@run_async
 def _onUnMuteRequest(client, cb):
     user_id = cb.from_user.id
     chat_id = cb.message.chat.id
@@ -67,7 +68,7 @@ def _onUnMuteRequest(client, cb):
                 )
 
 
-@pbot.on_message(filters.text & ~filters.private & ~filters.edited, group=1)
+@run_async
 def _check_member(client, message):
     chat_id = message.chat.id
     chat_db = sql.fs_settings(chat_id)
@@ -119,7 +120,7 @@ def _check_member(client, message):
                 )
 
 
-@pbot.on_message(filters.command(["forcesubscribe", "fsub"]) & ~filters.private)
+@run_async
 def config(client, message):
     user = client.get_chat_member(message.chat.id, message.from_user.id)
     if user.status == "creator" or user.user.id in SUDO_USERS:
@@ -175,3 +176,8 @@ def config(client, message):
         message.reply_text(
             "❗ **Group Creator Required**\n__You have to be the group creator to do that.__"
         )
+
+
+FORCE_HANDLER = CommandHandler("force",force)
+
+dispatcher.add_handler(FORCE_HANDLER)
