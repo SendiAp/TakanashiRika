@@ -70,4 +70,4 @@ def rem_chat(chat_id):
 def get_all_chats():
     try:
         return SESSION.query(ChatbotChats.chat_id).all()
-    finally:
+   
