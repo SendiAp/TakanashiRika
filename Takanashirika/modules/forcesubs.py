@@ -123,29 +123,29 @@ def _check_member(bot: Bot, update: Update):
 
 @run_async
 def foce_sub(bot: Bot, update: Update):
-    user = update.get_chat_member(update.chat.id, update.from_user.id)
+    user = bot.get_chat_member(bot.chat.id, update.from_user.id)
     if user.status == "creator" or user.user.id in SUDO_USERS:
-        chat_id = update.chat.id
-        if len(message.command) > 1:
-            input_str = update.command[1]
+        chat_id = bot.chat.id
+        if len(bot.command) > 1:
+            input_str = bot.command[1]
             input_str = input_str.replace("@", "")
             if input_str.lower() in ("off", "no", "disable"):
                 sql.disapprove(chat_id)
-                update.reply_text("❌ **Force Subscribe is Disabled Successfully.**")
+                bot.reply_text("❌ **Force Subscribe is Disabled Successfully.**")
             elif input_str.lower() in ("clear"):
-                sent_message = message.reply_text(
+                sent_bot = bot.reply_text(
                     "**Unmuting all members who are muted by me...**"
                 )
                 try:
-                    for chat_member in update.get_chat_members(
-                        update.chat.id, filter="restricted"
+                    for chat_member in bot.get_chat_members(
+                        bot.chat.id, filter="restricted"
                     ):
-                        if chat_member.restricted_by.id == (update.get_me()).id:
-                            update.unban_chat_member(chat_id, chat_member.user.id)
+                        if chat_member.restricted_by.id == (bot.get_me()).id:
+                            bot.unban_chat_member(chat_id, chat_member.user.id)
                             time.sleep(1)
-                    sent_message.edit("✅ **Unmuted all members who are muted by me.**")
+                    sent_bot.edit("✅ **Unmuted all members who are muted by me.**")
                 except ChatAdminRequired:
-                    sent_message.edit(
+                    sent_bot.edit(
                         "😕 **I am not an admin in this chat.**\n__I can't unmute members because i am not an admin in this chat make me admin with ban user permission.__"
                     )
             else:
