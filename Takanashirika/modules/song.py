@@ -16,17 +16,19 @@ loop = asyncio.get_event_loop()
 
 
 @register(pattern="^/song ?(.*)")
-@bot_admin
-async def play(_, message: Message):
-    if message.sender_chat:
-        return await message.reply_text(
+async def download_video(v_url):
+
+    lazy = v_url ; sender = await lazy.get_sender() ; me = await lazy.client.get_me()
+
+    if lazy.sender_chat:
+        return await lazy.edit(
             "You're an __Anonymous Admin__ in this Chat Group!\nRevert back to User Account From Admin Rights."
         )
     await message.delete()
     url = get_url(message)
     if url:
-        mystic = await message.reply_text("🔄 Memproses URL... Harap Tunggu!")
-        query = message.text.split(None, 1)[1]
+        mystic = await lazy.edit("🔄 Memproses URL... Harap Tunggu!")
+        query = lazy.text.split(None, 1)[1]
         (
             title, 
             duration_min,
@@ -38,19 +40,19 @@ async def play(_, message: Message):
             return await mystic.edit("Maaf! Ini Video Langsung")
         await mystic.delete()
         buttons = song_download_markup(videoid, message.from_user.id)
-        return await message.reply_photo(
+        return await lazy.reply_photo(
             photo=thumb,
             caption=f"📝 **Judul**:[{title}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n\n⏳**Durasi:** {duration_min} Mins",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     else:
         if len(message.command) < 2:
-            await message.reply_text(
+            await lazy.edit(
                 "**Lagu tidak ditemukan.** Coba cari dengan judul lagu yang lebih jelas, Ketik `/help` bila butuh bantuan."
             )
             return
-        mystic = await message.reply_text("🔍 Mencari Permintaan Anda...")
-        query = message.text.split(None, 1)[1]
+        mystic = await lazy.edit("🔍 Mencari Permintaan Anda...")
+        query = lazy.text.split(None, 1)[1]
         (
             title,
             duration_min,
@@ -64,7 +66,7 @@ async def play(_, message: Message):
         buttons = song_markup(
             videoid, duration_min, message.from_user.id, query, 0
         )
-        return await message.reply_photo(
+        return await lazy.reply_photo(
             photo=thumb,
             caption=f"📝 **Judul**:[{title}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n\n⏳**Durasi:** {duration_min} Mins",
             reply_markup=InlineKeyboardMarkup(buttons),
