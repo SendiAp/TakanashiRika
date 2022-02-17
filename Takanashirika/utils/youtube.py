@@ -1,6 +1,6 @@
 from youtubesearchpython import VideosSearch
 
-from Takanashirika.utils import time_to_seconds
+import time_to_seconds
 
 
 def get_yt_info_id(videoid):
