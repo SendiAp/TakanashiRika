@@ -71,3 +71,4 @@ def get_all_chats():
     try:
         return SESSION.query(ChatbotChats.chat_id).all()
    
+        SESSION.commit()
