@@ -233,7 +233,7 @@ if STRING_SESSION:
     bot = TelegramClient(StringSession(STRING_SESSION), API_KEY, API_HASH)
 else:
     # pylint: disable=invalid-name
-    bot = TelegramClient("Takanashirika", API_KEY, API_HASH)
+    bot = TelegramClient("Takanashirika", TELETHON_ID, TELETHON_HASH)
 
 # Load at end to ensure all prev variables have been set
 from Takanashirika.modules.helper_funcs.handlers import CustomCommandHandler, CustomRegexHandler, CustomMessageHandler
