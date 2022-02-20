@@ -43,7 +43,6 @@ hurry.filesize
 spamwatch
 pySmartDL
 youtube-dl
-telethon
 bs4
 pybase64
 hachoir
