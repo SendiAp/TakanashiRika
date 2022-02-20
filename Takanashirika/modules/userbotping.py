@@ -6,8 +6,7 @@ from datetime import datetime
 import redis
 from speedtest import Speedtest
 
-from Takanashirika import OWNER_NAME
-from Takanashirika.events import takanashirika
+from Takanashirika import OWNER_NAME, bot
 
 async def get_readable_time(seconds: int) -> str:
     count = 0
@@ -36,7 +35,7 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@takanashirika(outgoing=True, pattern="^.ping$")
+@bot.on(outgoing=True, pattern='^.ping(?: |$)(.*)')
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
