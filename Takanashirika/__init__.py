@@ -9,6 +9,7 @@ from pyrogram import Client, errors
 from telethon import TelegramClient
 from aiohttp import ClientSession
 from Python_ARQ import ARQ
+from telethon.sync import TelegramClient
 
 StartTime = time.time()
 
