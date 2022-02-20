@@ -6,7 +6,7 @@ from datetime import datetime
 from speedtest import Speedtest
 
 from Takanashirika import OWNER_NAME, 
-from Takanashirika import takanashirika
+from Takanashirika.events import takanashirika
 
 async def get_readable_time(seconds: int) -> str:
     count = 0
