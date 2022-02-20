@@ -43,7 +43,6 @@
          "description": "opsional: obrolan tempat menyimpan pesan tersimpan yang Anda balas, untuk menghentikan orang menghapus pesan lama mereka",
          "required": false,
          "value": ""   
-      },
          
       },
       "GBAN_LOGS": {	
