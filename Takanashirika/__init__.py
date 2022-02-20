@@ -208,7 +208,12 @@ print("[TakanashiRika]: INITIALIZING ARQ CLIENT")
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 pbot = Client("Takanashirika", api_id=TELETHON_ID, api_hash=TELETHON_HASH, bot_token=TOKEN)
 
-bot = Client("Takanashirika", api_id=TELETHON_ID, api_hash=TELETHON_HASH, string_session=STRING_SESSION)
+if STRING_SESSION:
+    # pylint: disable=invalid-name
+    bot = TelegramClient(StringSession(STRING_SESSION), API_KEY, API_HASH)
+else:
+    # pylint: disable=invalid-name
+    bot = TelegramClient("userbot", API_KEY, API_HASH)
 
 apps = []
 apps.append(pbot)
