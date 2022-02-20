@@ -9,10 +9,6 @@
    ],
    "description": "Bot Telegram modular untuk mengelola grup Anda dengan beberapa fitur tambahan.",
    "env": {
-      "ALLOW_EXCL": {
-         "description": "Setel ini ke True jika Anda mau ! menjadi awalan perintah bersama dengan /",
-         "value": "True"
-      },
       "APP_ID": {
          "description": "Dapatkan nilai ini dari my.telegram.org! Tolong jangan mencuri",
          "value": "",
@@ -43,19 +39,11 @@
          "required": true,
          "value": ""
       },
-      "BAN_STICKER": {
-         "description": "ID stiker yang ingin Anda gunakan saat mencekal orang.",
-         "required": false,
-         "value": "CAACAgUAAxkBAAJ7LmEkzya424L-Tk_20b5HtOIBXNNDAAJ3AwACcg4YVkXqxUoom5i5IAQ"
-      },
       "MESSAGE_DUMP": {
          "description": "opsional: obrolan tempat menyimpan pesan tersimpan yang Anda balas, untuk menghentikan orang menghapus pesan lama mereka",
          "required": false,
          "value": ""   
       },
-      "DEL_CMDS": {
-         "description": "Setel ini ke True jika Anda ingin menghapus pesan perintah dari pengguna yang tidak memiliki izin untuk menjalankan perintah itu.",
-         "value": "False"
          
       },
       "GBAN_LOGS": {	
@@ -66,11 +54,6 @@
       "ENV": {
          "description": "Menyetel ini ke APA SAJA akan mengaktifkan variabel lingkungan.",
          "value": "ANYTHING"
-      },
-      "KICK_STICKER": {
-         "description": "ID stiker yang ingin Anda gunakan saat menendang orang ke orang.",
-         "required": false,
-         "value": "CAACAgUAAxkBAAJ7LmEkzya424L-Tk_20b5HtOIBXNNDAAJ3AwACcg4YVkXqxUoom5i5IAQ"
       },
       "SQLALCHEMY_DATABASE_URI": {
          "description": "Db postgresql Anda, kosongkan bidang ini jika Anda tidak memilikinya.",
@@ -88,43 +71,7 @@
       "DEV_USERS": {
          "description": "ID pengguna yang merupakan Dev (bisa menggunakan /py etc.)",
          "required": false,
-         "value": ""
-      },
-      "CASH_API_KEY": {
-         "description": "Diperlukan untuk konverter mata uang",
-         "required": false,
-         "value": "V7NS1NBFEL4X24L6"
-      },
-      "TIME_API_KEY": {
-         "description": "Diperlukan untuk informasi zona waktu",
-         "value": "2AS711XS1O9B"
-      },
-       "LASTFM_API_KEY": {
-         "description": "Diperlukan untuk plugin lastfm",
-         "required": false,
-         "value": ""
-      },
-       "START_IMG": {
-         "description": "Gambar menunjukkan saat tekan /start",
-         "value": "https://telegra.ph/file/6cc9878592e199f176795.jpg"    
-      },
-      "API_OPENWEATHER": {
-         "description": "Diperlukan untuk informasi cuaca",
-         "value": "b84d0dea12baa6acf6c22f41cea472b5"
-      },
-      "PORT": {
-         "description": "Port untuk digunakan untuk Anda webhooks.",
-         "required": false,
-         "value": ""
-      },
-      "STRICT_GBAN": {
-         "description": "Terapkan gban di seluruh grup baru dan juga grup lama. Saat pengguna yang diblokir berbicara, dia akan diblokir.",
-         "value": "True"
-      },
-        
-      "STRICT_GMUTE": {
-         "description": "Terapkan gmute di seluruh grup baru serta grup lama. Ketika pengguna gmutes berbicara, dia akan dibungkam",
-         "value": "True"
+         "value": ""    
       },
       "SUDO_USERS": {
          "description": "Daftar ID pengguna yang dipisahkan spasi yang ingin Anda tetapkan sebagai pengguna sudo.",
@@ -145,26 +92,6 @@
          "description": "Itu Heroku App URL :-  https://<appname>.herokuapp.com/",
          "required": false,
          "value": "https://<appname>.herokuapp.com/"
-      },
-      "WEBHOOK": {
-         "description": "Menyetel ini ke APA SAJA akan mengaktifkan webhook.",
-         "required": false,
-         "value": ""
-      },
-      "WHITELIST_USERS": {
-         "description": "Daftar ID pengguna yang dipisahkan spasi yang ingin Anda tetapkan sebagai daftar putih - tidak dapat diblokir dengan bot Anda.",
-         "required": false,
-         "value": ""
-      },
-      "WALL_API":{
-         "description": "️ Masukan wall api",
-         "required": false,
-         "value": ""
-      },
-      "LYDIA_API": {
-         "description": "Taruh disini lydia API.",
-         "required": false,
-         "value": "632740cd2395c73b58275b54ff57a02b607a9f8a4bbc0e37a24e7349a098f95eaa6569e22e2d90093e9c1a9cc253380a218bfc2b7af2e407494502f6fb76f97e" 
       }
    },
    "keywords": [
@@ -172,7 +99,7 @@
       "weeb",
       "group",
       "manager",
-      "jisoox"
+      "takanashirika"
       
    ],
    "buildpacks": [
