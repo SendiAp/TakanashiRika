@@ -59,7 +59,7 @@ RUN apt update && apt upgrade -y && \
 RUN pip3 install --upgrade pip setuptools
 RUN git clone -b master https://github.com/SendiAp/TakanashiRika /root/Takanashirika
 WORKDIR /root/Takanashirika
-COPY ./Takanashirika/sample_config.py ./JisooX/config.py* /root/Takanashirika/Takanashirika/
+COPY ./Takanashirika/sample_config.py ./Takanashirika/config.py* /root/Takanashirika/Takanashirika/
 ENV PATH="/home/bot/bin:$PATH"
 RUN pip3 install -U -r requirements.txt
 CMD ["python3","-m","Takanashirika"]
