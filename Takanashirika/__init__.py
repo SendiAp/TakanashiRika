@@ -230,7 +230,7 @@ else:
         
 if STRING_SESSION:
     # pylint: disable=invalid-name
-    bot = TelegramClient(StringSession(STRING_SESSION), API_KEY, API_HASH)
+    bot = TelegramClient(StringSession(STRING_SESSION), TELETHON_ID, TELETHON_HASH)
 else:
     # pylint: disable=invalid-name
     bot = TelegramClient("Takanashirika", TELETHON_ID, TELETHON_HASH)
