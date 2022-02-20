@@ -208,13 +208,6 @@ print("[TakanashiRika]: INITIALIZING ARQ CLIENT")
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 pbot = Client("Takanashirika", api_id=TELETHON_ID, api_hash=TELETHON_HASH, bot_token=TOKEN)
 
-if STRING_SESSION:
-    # pylint: disable=invalid-name
-    bot = TelegramClient(StringSession(STRING_SESSION), API_KEY, API_HASH)
-else:
-    # pylint: disable=invalid-name
-    bot = TelegramClient("userbot", API_KEY, API_HASH)
-
 apps = []
 apps.append(pbot)
 
@@ -233,6 +226,13 @@ else:
     except Exception:
         spam_watch = None
         
+if STRING_SESSION:
+    # pylint: disable=invalid-name
+    bot = TelegramClient(StringSession(STRING_SESSION), API_KEY, API_HASH)
+else:
+    # pylint: disable=invalid-name
+    bot = TelegramClient("Takanashirika", API_KEY, API_HASH)
+
 # Load at end to ensure all prev variables have been set
 from Takanashirika.modules.helper_funcs.handlers import CustomCommandHandler, CustomRegexHandler, CustomMessageHandler
 
