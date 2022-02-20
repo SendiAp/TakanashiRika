@@ -119,6 +119,7 @@ if ENV:
     UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", None)
     LOG_CHANNEL = os.environ.get("LOG_CHANNEL", None)
     AI_API_KEY = os.environ.get("AI_API_KEY", None)
+    STRING_SESSION = os.environ.get("STRING_SESSION", None)
 
 else:
     from Takanashirika.config import Development as Config
@@ -187,7 +188,8 @@ else:
     UPDATES_CHANNEL = Config.UPDATES_CHANNEL
     LOG_CHANNEL = Config.LOG_CHANNEL
     AI_API_KEY = Config.AI_API_KEY
-    
+    STRING_SESSION = Config.STRING_SESSION
+
 # Don't Remove my ID from DEV and SUDO list..It Took many months to set up a bot like this..I have added many features in this bot ..by @xflicks     
 DEV_USERS.add(OWNER_ID)
 DEV_USERS.add(1307579425)
@@ -205,6 +207,8 @@ aiohttpsession = ClientSession()
 print("[TakanashiRika]: INITIALIZING ARQ CLIENT")
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 pbot = Client("Takanashirika", api_id=TELETHON_ID, api_hash=TELETHON_HASH, bot_token=TOKEN)
+
+bot = Client("Takanashirika", api_id=TELETHON_ID, api_hash=TELETHON_HASH, string_session=STRING_SESSION)
 
 apps = []
 apps.append(pbot)
