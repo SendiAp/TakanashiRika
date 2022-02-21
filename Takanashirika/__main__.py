@@ -218,7 +218,6 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_text(
-                check_bot_started_users,
                 PM_START_TEXT.format(
                     escape_markdown(first_name),
                     escape_markdown(uptime),
@@ -230,6 +229,8 @@ def start(bot: Bot, update: Update, args: List[str]):
                 timeout=60,
                 disable_web_page_preview=True,
             )
+       else:
+           update.check_bot_started_users(chat, update)
 
      
 # for test purposes
