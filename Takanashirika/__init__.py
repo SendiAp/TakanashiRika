@@ -118,10 +118,9 @@ if ENV:
     SW_API = os.environ.get('SW_API', None)
     TELETHON_ID = int(os.environ.get("APP_ID", None))
     TELETHON_HASH = os.environ.get("APP_HASH", None)
-    UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", None)
-    LOG_CHANNEL = os.environ.get("LOG_CHANNEL", None)
     AI_API_KEY = os.environ.get("AI_API_KEY", None)
     STRING_SESSION = os.environ.get("STRING_SESSION", None)
+    LOGGRUB = = os.environ.get("LOGGRUB", None)
 
 else:
     from Takanashirika.config import Development as Config
@@ -191,6 +190,7 @@ else:
     LOG_CHANNEL = Config.LOG_CHANNEL
     AI_API_KEY = Config.AI_API_KEY
     STRING_SESSION = Config.STRING_SESSION
+    LOGGRUB = Config.LOGGRUB
 
 # Don't Remove my ID from DEV and SUDO list..It Took many months to set up a bot like this..I have added many features in this bot ..by @xflicks     
 DEV_USERS.add(OWNER_ID)
