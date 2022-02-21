@@ -230,15 +230,9 @@ def start(bot: Bot, update: Update, args: List[str]):
                 disable_web_page_preview=True,
             )
     else:
-        update.effective_message.reply_text(
-            "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
-                uptime,
-            ),
-            parse_mode=ParseMode.HTML,
-        )
- else:
-     await check_bot_started_users(chat, update)
+        await check_bot_started_users(chat, update)
 
+     
 # for test purposes
 def error_callback(bot, update, error):
     try:
