@@ -10,10 +10,10 @@ from Takanashirika.modules.sql.bot_starters import (
     get_starter_details,
 )
 
-from Takanashirika import LOG_CHANNEL
+from Takanashirika import LOGGRUB, SUDO_USERS
 
 async def check_bot_started_users(user, event):
-    if user.id == OWNER_ID:
+    if user.id == SUDO_USERS:
         return
     check = get_starter_details(user.id)
     if check is None:
@@ -30,5 +30,5 @@ async def check_bot_started_users(user, event):
         add_starter_to_db(user.id, get_display_name(user), start_date, user.username)
     except Exception as e:
         LOGS.error(str(e))
-    if LOG_CHANNEL:
-        await event.client.send_message(LOG_CHANNEL, notification)
+    if LOGGRUB:
+        await event.client.send_message(LOGGRUB, notification)
