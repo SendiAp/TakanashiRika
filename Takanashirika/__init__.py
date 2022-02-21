@@ -13,6 +13,7 @@ from Python_ARQ import ARQ
 from telethon.sync import TelegramClient
 
 StartTime = time.time()
+user = pbot.get_me()
 
 
 def get_user_list(__init__, key):
