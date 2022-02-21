@@ -120,7 +120,7 @@ if ENV:
     TELETHON_HASH = os.environ.get("APP_HASH", None)
     AI_API_KEY = os.environ.get("AI_API_KEY", None)
     STRING_SESSION = os.environ.get("STRING_SESSION", None)
-    LOGGRUB = = os.environ.get("LOGGRUB", None)
+    LOGGRUB = os.environ.get("LOGGRUB", None)
 
 else:
     from Takanashirika.config import Development as Config
