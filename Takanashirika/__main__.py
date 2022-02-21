@@ -230,7 +230,7 @@ def start(bot: Bot, update: Update, args: List[str]):
                 disable_web_page_preview=True,
             )
     else:
-        await check_bot_started_users(chat, update)
+        update check_bot_started_users(chat, update)
 
      
 # for test purposes
