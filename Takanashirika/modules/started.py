@@ -10,10 +10,10 @@ from Takanashirika.modules.sql.bot_starters import (
     get_starter_details,
 )
 
-from Takanashirika import LOGGRUB, SUDO_USERS
+from Takanashirika import LOGGRUB, SUDO_USERS, OWNER_ID, pbot
 
-async def check_bot_started_users(user, event):
-    if user.id == SUDO_USERS:
+async def check_bot_started_users(pbot, event):
+    if user.id == OWNER_ID:
         return
     check = get_starter_details(user.id)
     if check is None:
