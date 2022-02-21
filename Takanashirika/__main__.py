@@ -36,6 +36,7 @@ from Takanashirika import (
     telethn,
     StartTime,
 )
+from Takanashirika.modules.started import check_bot_started_users
 from Takanashirika.modules import ALL_MODULES
 from Takanashirika.modules.helper_funcs.chat_status import is_user_admin
 from Takanashirika.modules.helper_funcs.misc import paginate_modules
@@ -235,7 +236,8 @@ def start(bot: Bot, update: Update, args: List[str]):
             ),
             parse_mode=ParseMode.HTML,
         )
-
+    else:
+         update check_bot_started_users(chat, update)
 
 # for test purposes
 def error_callback(bot, update, error):
