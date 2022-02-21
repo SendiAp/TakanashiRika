@@ -10,7 +10,7 @@ from Takanashirika.modules.sql.bot_starters import (
     get_starter_details,
 )
 
-from Takanashirika import LOG_CHANNEL, user
+from Takanashirika import LOG_CHANNEL
 
 async def check_bot_started_users(user, event):
     if user.id == OWNER_ID:
@@ -30,5 +30,5 @@ async def check_bot_started_users(user, event):
         add_starter_to_db(user.id, get_display_name(user), start_date, user.username)
     except Exception as e:
         LOGS.error(str(e))
-    if BOTLOG_CHATID:
-        await event.client.send_message(BOTLOG_CHATID, notification)
+    if LOG_CHANNEL:
+        await event.client.send_message(LOG_CHANNEL, notification)
