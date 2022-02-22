@@ -77,7 +77,7 @@ Hit the /help to see available command.
 
 buttons = [
     [
-        InlineKeyboardButton(text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅ​", callback_data="help_back"),
+        InlineKeyboardButton(text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅ​", callback_data="Sendi_"),
     ],
     [
         InlineKeyboardButton(
