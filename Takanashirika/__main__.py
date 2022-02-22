@@ -325,7 +325,9 @@ def help_button(bot: Bot, update: Update):
 @run_async
 def Takanashi_about_callback(bot: Bot, update: Update):
     query = update.callback_query
-    if query.data == "Sendi_":
+    kontol_match = re.match(r"Sendi_", query.data)
+
+    if kontol_match:
         query.message.edit_text(
             text="๏ a powerful group management bot built to help you manage your group easily."
             "\n• I can restrict users."
@@ -343,7 +345,7 @@ def Takanashi_about_callback(bot: Bot, update: Update):
                             text="ꜱᴘᴇꜱɪᴀʟɪꜱ​", callback_data="Groups_"
                         ),
                         InlineKeyboardButton(
-                            text="ɴᴏᴛᴇs​", callback_data="Sendi_tools"
+                            text="ʜᴇʟᴘᴍᴇ​", callback_data="help_back"
                         ),
                     ],
                     [
