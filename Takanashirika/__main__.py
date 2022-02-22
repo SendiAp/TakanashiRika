@@ -80,7 +80,7 @@ buttons = [
         InlineKeyboardButton(text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅ​", callback_data="help_back"),
     ],
     [
-        InlineKeyboardButton(text="ʜᴇʟᴘ +", callback_data="button_prev"),
+        InlineKeyboardButton(text="ʜᴇʟᴘ +", callback_data="Sendi_about"),
         InlineKeyboardButton(text="ᴛʀʏ ɪɴʟɪɴᴇ​", switch_inline_query_current_chat=""),
     ],
     [
@@ -326,14 +326,12 @@ def help_button(bot: Bot, update: Update):
     except BadRequest:
         pass
 
+
 def Takanashi_about_callback(bot: Bot, update: Update):
     query = update.callback_query
-    taka_match = re.match(r"button_prev\((.+?)\)", query.data)
-    sendi_ganteng = re.match(r"sendi_backo\((.+?)\)", query.data)
-    kpopers_inline = re.match(r"kpop_in\((.+?)\)", query.data)
-    ntakana_match = re.match(r"gak_tau\((.+?)\)", query.data)
-    bacotan_match = re.match(r"emg_elu\((.+?)\)", query.data)
-    kontol_match = re.match(r"ok_bang", query.data)
+    taka_match = re.match(r"Sendi_about\((.+?)\)", query.data)
+    anct_ganteng = re.match(r"Sendi_kpopers\((.+?)\)", query.data)
+    kontol_match = re.match(r"Sendi_bang", query.data)
 
     print(query.message.chat.id)
 
@@ -477,7 +475,6 @@ def settings_button(bot: Bot, update: Update):
         else:
             LOGGER.exception("Exception in settings buttons. %s", str(query.data))
 
-
 @run_async
 def get_settings(bot: Bot, update: Update):
     chat = update.effective_chat  # type: Optional[Chat]
@@ -563,9 +560,12 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
    
+    about_callback_handler = CallbackQueryHandler(Takanashi_about_callback, pattern=r"Sendi_")
+   
     # dispatcher.add_handler(test_handler)
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(help_handler)
+    dispatcher.add_handler(about_callback_handler)
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
