@@ -123,12 +123,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 GDPR = []
-
-START_IMG = os.environ.get('START_IMG', None)
-if START_IMG is None:
-    img = "https://telegra.ph/file/6cc9878592e199f176795.jpg"
-else:
-  img = START_IMG    
+    
     
 for module_name in ALL_MODULES:
     imported_module = importlib.import_module("Takanashirika.modules." + module_name)
@@ -229,9 +224,6 @@ def start(bot: Bot, update: Update, args: List[str]):
                 timeout=60,
                 disable_web_page_preview=True,
             )
-       else:
-           update.check_bot_started_users(chat, update)
-
      
 # for test purposes
 def error_callback(bot, update, error):
@@ -315,6 +307,14 @@ def help_button(bot: Bot, update: Update):
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(0, HELPABLE, "help"),
+                ),
+            )
+        elif tools_match:
+            query.message.edit_text(
+                text=HELP_STRINGS,
+                parse_mode=ParseMode.MARKDOWN,
+                reply_markup=InlineKeyboardMarkup(
+                    [[InlineKeyboardButton(text="🔙", callback_data="help_module")]],
                 ),
             )
 
