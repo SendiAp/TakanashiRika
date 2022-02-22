@@ -81,7 +81,7 @@ buttons = [
         InlineKeyboardButton(text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅ​", callback_data="help_back"),
     ],
     [
-        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="Skyzu_"),
+        InlineKeyboardButton(text="ʜᴇʟᴘ +", callback_data="Takanashi_"),
         InlineKeyboardButton(text="ᴛʀʏ ɪɴʟɪɴᴇ​", switch_inline_query_current_chat=""),
     ],
     [
@@ -310,11 +310,12 @@ def help_button(bot: Bot, update: Update):
                 ),
             )
         elif tools_match:
+            tools_match = int(prev_match.group(1))
             query.message.edit_text(
                 text=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="🔙", callback_data="help_module")]],
+                    [[InlineKeyboardButton(text="Tools", callback_data="help_module")]],
                 ),
             )
 
@@ -447,6 +448,52 @@ def settings_button(bot: Bot, update: Update):
         else:
             LOGGER.exception("Exception in settings buttons. %s", str(query.data))
 
+def Takanashi_about_callback(bot: Bot, update: Update):
+    query = update.callback_query
+    if query.data == "Takanashi_":
+        query.message.edit_text(
+            text="๏ I'm *TakanashiRika*, a powerful group management bot built to help you manage your group easily."
+            "\n• I can restrict users."
+            "\n• I can greet users with customizable welcome messages and even set a group's rules."
+            "\n• I have an advanced anti-flood system."
+            "\n• I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc."
+            "\n• I have a note keeping system, blacklists, and even predetermined replies on certain keywords."
+            "\n• I check for admins' permissions before executing any command and more stuffs"
+            "\n\n_Takanashi's licensed under the GNU General Public License v3.0_"
+            "\n\n Click on button bellow to get basic help for SkyzuRobot.",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(
+                            text="ᴀᴅᴍɪɴs​", callback_data="Skyzu_admin"
+                        ),
+                        InlineKeyboardButton(
+                            text="ɴᴏᴛᴇs​", callback_data="Skyzu_notes"
+                        ),
+                    ],
+                    [
+                        InlineKeyboardButton(
+                            text="sᴜᴘᴘᴏʀᴛ​", callback_data="Skyzu_support"
+                        ),
+                        InlineKeyboardButton(
+                            text="ᴄʀᴇᴅɪᴛs​", callback_data="Skyzu_credit"
+                        ),
+                    ],
+                    [
+                        InlineKeyboardButton(
+                            text="ᴍᴜsɪᴄᴘʟᴀʏᴇʀ​", callback_data="source_"
+                        ),
+                    ],
+                    [
+                        InlineKeyboardButton(
+                            text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Skyzu_back"
+                        ),
+                    ],
+                ]
+            ),
+        )
 
 @run_async
 def get_settings(bot: Bot, update: Update):
@@ -469,8 +516,6 @@ def get_settings(bot: Bot, update: Update):
 
     else:
         send_settings(chat.id, user.id, True)
-
-
 
 
 def migrate_chats(bot: Bot, update: Update):
