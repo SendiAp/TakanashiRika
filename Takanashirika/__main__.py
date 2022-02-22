@@ -326,7 +326,7 @@ def help_button(bot: Bot, update: Update):
     except BadRequest:
         pass
 
-
+@run_async
 def Takanashi_about_callback(bot: Bot, update: Update):
     query = update.callback_query
     taka_match = re.match(r"Sendi_about\((.+?)\)", query.data)
@@ -340,7 +340,7 @@ def Takanashi_about_callback(bot: Bot, update: Update):
                 text="Sendi Ganteng",
                 parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Sendi_bang")]]
+                [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Sendi_next")]]
             ),
         )
 
