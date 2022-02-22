@@ -330,8 +330,7 @@ def help_button(bot: Bot, update: Update):
 def Takanashi_about_callback(bot: Bot, update: Update):
     query = update.callback_query
     taka_match = re.match(r"Sendi_about\((.+?)\)", query.data)
-    anct_ganteng = re.match(r"Sendi_kpopers\((.+?)\)", query.data)
-    kontol_match = re.match(r"Sendi_bang", query.data)
+    sendi_ganteng = re.match(r"Sendi_next", query.data)
 
     print(query.message.chat.id)
 
@@ -341,7 +340,7 @@ def Takanashi_about_callback(bot: Bot, update: Update):
                 text="Sendi Ganteng",
                 parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="sendi_backo")]]
+                [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Sendi_bang")]]
             ),
         )
 
