@@ -325,32 +325,36 @@ def help_button(bot: Bot, update: Update):
 @run_async
 def Takanashi_about_callback(bot: Bot, update: Update):
     query = update.callback_query
-    if query.data == "Sendi_":
+    kontol_match = re.match(r"Sendi_module\((.+?)\)", query.data)
+    babi_match = re.match(r"Sendi_tools\((.+?)\)", query.data)
+    admins_match = re.match(r"Sendi_prev\((.+?)\)", query.data)
+    start_match = re.match(r"Sendi_next\((.+?)\)", query.data)
+    info_match = re.match(r"Sendi_", query.data)
+
+    if info_match:
         query.message.edit_text(
-            text="๏ I'm *Skyzu*, a powerful group management bot built to help you manage your group easily."
+            text="๏ a powerful group management bot built to help you manage your group easily."
             "\n• I can restrict users."
             "\n• I can greet users with customizable welcome messages and even set a group's rules."
             "\n• I have an advanced anti-flood system."
             "\n• I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc."
             "\n• I have a note keeping system, blacklists, and even predetermined replies on certain keywords."
-            "\n• I check for admins' permissions before executing any command and more stuffs"
-            "\n\n_Skyzu's licensed under the GNU General Public License v3.0_"
-            "\n\n Click on button bellow to get basic help for SkyzuRobot.",
+            "\n• I check for admins' permissions before executing any command and more stuffs",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="ᴀᴅᴍɪɴs​", callback_data="Skyzu_admin"
+                            text="ᴀᴅᴍɪɴs​", callback_data="Sendi_module"
                         ),
                         InlineKeyboardButton(
-                            text="ɴᴏᴛᴇs​", callback_data="Skyzu_notes"
+                            text="ɴᴏᴛᴇs​", callback_data="Sendi_tools"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            text="sᴜᴘᴘᴏʀᴛ​", callback_data="Skyzu_support"
+                            text="sᴜᴘᴘᴏʀᴛ​", callback_data="Sendi_prev"
                         ),
                         InlineKeyboardButton(
                             text="ᴄʀᴇᴅɪᴛs​", callback_data="Skyzu_credit"
@@ -358,18 +362,13 @@ def Takanashi_about_callback(bot: Bot, update: Update):
                     ],
                     [
                         InlineKeyboardButton(
-                            text="ᴍᴜsɪᴄᴘʟᴀʏᴇʀ​", callback_data="source_"
-                        ),
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Skyzu_back"
+                            text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Sendi_next"
                         ),
                     ],
                 ]
             ),
         )
-    elif query.data == "Skyzu_back":
+    elif start_match:
         first_name = update.effective_user.first_name
         uptime = get_readable_time((time.time() - StartTime))
         query.message.edit_text(
@@ -385,7 +384,7 @@ def Takanashi_about_callback(bot: Bot, update: Update):
             disable_web_page_preview=True,
         )
 
-    elif query.data == "Skyzu_admin":
+    elif admins_match:
         query.message.edit_text(
             text=f"*๏ Let's make your group bit effective now*"
             f"\nCongragulations, {dispatcher.bot.first_name} now ready to manage your group."
@@ -402,7 +401,7 @@ def Takanashi_about_callback(bot: Bot, update: Update):
             ),
         )
 
-    elif query.data == "Skyzu_notes":
+    elif babi_match:
         query.message.edit_text(
             text=f"<b>๏ Setting up notes</b>"
             f"\nYou can save message/media/audio or anything as notes"
@@ -413,7 +412,7 @@ def Takanashi_about_callback(bot: Bot, update: Update):
                 [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Skyzu_")]]
             ),
         )
-    elif query.data == "Skyzu_support":
+    elif kontol_match:
         query.message.edit_text(
             text=f"*๏ {dispatcher.bot.first_name} support chats*"
             "\nJoin My Support Group/Channel for see or report a problem on Skyzu.",
@@ -425,23 +424,6 @@ def Takanashi_about_callback(bot: Bot, update: Update):
                         InlineKeyboardButton(
                             text="ᴜᴘᴅᴀᴛᴇs​", url="https://t.me/ProjectSkyzu"
                         ),
-                    ],
-                    [
-                        InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Skyzu_"),
-                    ],
-                ]
-            ),
-        )
-
-    elif query.data == "Skyzu_credit":
-        query.message.edit_text(
-            text=f"<b>๏ Credis for Skyzu</b>\n"
-            f"\nHere Developers Making The SkyzuRobot",
-            parse_mode=ParseMode.HTML,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(text="Skyzu", url="t.me/skyzu"),
                     ],
                     [
                         InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Skyzu_"),
