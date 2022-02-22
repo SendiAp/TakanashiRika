@@ -325,10 +325,10 @@ def help_button(bot: Bot, update: Update):
 @run_async
 def Takanashi_about_callback(bot: Bot, update: Update):
     query = update.callback_query
-    kontol_match = re.match(r"Sendi_module\((.+?)\)", query.data)
-    babi_match = re.match(r"Sendi_tools\((.+?)\)", query.data)
-    admins_match = re.match(r"Sendi_prev\((.+?)\)", query.data)
-    start_match = re.match(r"Sendi_next\((.+?)\)", query.data)
+    kontol_match = re.match(r"Sendi_module", query.data)
+    babi_match = re.match(r"Sendi_tools", query.data)
+    admins_match = re.match(r"Sendi_prev", query.data)
+    start_match = re.match(r"Sendi_next", query.data)
     info_match = re.match(r"Sendi_", query.data)
 
     if info_match:
