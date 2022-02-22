@@ -339,77 +339,23 @@ def Takanashi_about_callback(bot: Bot, update: Update):
 
     try:
         if taka_match:
-            tools_match = int(prev_match.group(1))
+            
             query.message.edit_text(
                 text=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Skyzu_")]]
+                [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="sendi_backo")]]
             ),
         )
 
-    elif kpopers_inline:
-        query.message.edit_text(
-            text=f"*๏ You Can Find Kpopers With Your Dreams By Using The Command Below:*"
-            f"\n⭐ Status Running."
-            "\n\n*Perintah:*"
-            "\n• /idol - (Idol Name)."
-            "\n• /groups - (groups name)."
-            "\n\n*Greetings*",
-            parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Skyzu_")]]
-            ),
-        )
-
-    elif ntakana_match:
-        query.message.edit_text(
-            text=f"<b>๏ Setting up notes</b>"
-            f"\nYou can save message/media/audio or anything as notes"
-            f"\nto get a note simply use # at the beginning of a word"
-            f"\n\nYou can also set buttons for notes and filters (refer help menu)",
-            parse_mode=ParseMode.HTML,
-            reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Skyzu_")]]
-            ),
-        )
-    elif bacotan_match:
-        query.message.edit_text(
-            text=f"*๏ {dispatcher.bot.first_name} support chats*"
-            "\nJoin My Support Group/Channel for see or report a problem on Skyzu.",
-            parse_mode=ParseMode.MARKDOWN,
-            InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ​", url="t.me/skyzusupport"),
-                        InlineKeyboardButton(
-                            text="ᴜᴘᴅᴀᴛᴇs​", url="https://t.me/ProjectSkyzu"
-                        ),
-                    ],
-                    [
-                        InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Skyzu_"),
-                    ],
-                ]
-            ),
-        )
-
-    elif kontol_match:
-        query.message.edit_text(
-            text=f"<b>๏ Credis for Skyzu</b>\n"
-            f"\nHere Developers Making The SkyzuRobot",
-            parse_mode=ParseMode.HTML,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(text="Skyzu", url="t.me/skyzu"),
-                    ],
-                    [
-                        InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Skyzu_"),
-                    ],
-                ]
-            ),
-        )
+        elif sendi_ganteng:
+            query.message.edit_text(
+                text=HELP_STRINGS,
+                parse_mode=ParseMode.MARKDOWN,
+                reply_markup=InlineKeyboardMarkup(
+                    [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Skyzu_")]]
+                ),
+            )
 
 def Source_about_callback(bot: Bot, update: Update):
     query = update.callback_query
