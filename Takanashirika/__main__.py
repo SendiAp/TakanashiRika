@@ -322,7 +322,6 @@ def help_button(bot: Bot, update: Update):
 
         # ensure no spinny white circle
         bot.answer_callback_query(query.id)
-        # query.message.delete()
 
     except BadRequest:
         pass
@@ -330,6 +329,11 @@ def help_button(bot: Bot, update: Update):
 def Takanashi_about_callback(bot: Bot, update: Update):
     query = update.callback_query
     taka_match = re.match(r"button_prev\((.+?)\)", query.data)
+    sendi_ganteng = re.match(r"sendi_backo\((.+?)\)", query.data)
+    kpopers_inline = re.match(r"kpop_in\((.+?)\)", query.data)
+    ntakana_match = re.match(r"gak_tau\((.+?)\)", query.data)
+    bacotan_match = re.match(r"emg_elu\((.+?)\)", query.data)
+    kontol_match = re.match(r"ok_bang", query.data)
 
     print(query.message.chat.id)
 
@@ -351,7 +355,7 @@ def Takanashi_about_callback(bot: Bot, update: Update):
                 [
                     [
                         InlineKeyboardButton(
-                            text="ᴋᴘᴏᴘᴇʀꜱ​", callback_data="Kpopers_inline"
+                            text="ᴋᴘᴏᴘᴇʀꜱ​", callback_data="kpop_in"
                         ),
                         InlineKeyboardButton(
                             text="ꜱᴜᴅᴏ​", callback_data="Skyzu_notes"
@@ -364,14 +368,14 @@ def Takanashi_about_callback(bot: Bot, update: Update):
                     ],
                     [
                         InlineKeyboardButton(
-                            text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Sendi_back"
+                            text="ɢᴏ ʙᴀᴄᴋ​", callback_data="sendi_backo"
                         ),
                     ],
                 ]
             ),
         )
 
-    elif query.data == "Sendi_back":
+    elif sendi_ganteng:
         first_name = update.effective_user.first_name
         uptime = get_readable_time((time.time() - StartTime))
         query.message.edit_text(
@@ -387,7 +391,7 @@ def Takanashi_about_callback(bot: Bot, update: Update):
             disable_web_page_preview=True,
         )
 
-    elif query.data == "Kpopers_inline":
+    elif kpopers_inline:
         query.message.edit_text(
             text=f"*๏ You Can Find Kpopers With Your Dreams By Using The Command Below:*"
             f"\n⭐ Status Running."
@@ -402,7 +406,7 @@ def Takanashi_about_callback(bot: Bot, update: Update):
             ),
         )
 
-    elif query.data == "Skyzu_notes":
+    elif ntakana_match:
         query.message.edit_text(
             text=f"<b>๏ Setting up notes</b>"
             f"\nYou can save message/media/audio or anything as notes"
@@ -413,7 +417,7 @@ def Takanashi_about_callback(bot: Bot, update: Update):
                 [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Skyzu_")]]
             ),
         )
-    elif query.data == "Skyzu_support":
+    elif bacotan_match:
         query.message.edit_text(
             text=f"*๏ {dispatcher.bot.first_name} support chats*"
             "\nJoin My Support Group/Channel for see or report a problem on Skyzu.",
@@ -433,7 +437,7 @@ def Takanashi_about_callback(bot: Bot, update: Update):
             ),
         )
 
-    elif query.data == "Skyzu_credit":
+    elif kontol_match:
         query.message.edit_text(
             text=f"<b>๏ Credis for Skyzu</b>\n"
             f"\nHere Developers Making The SkyzuRobot",
