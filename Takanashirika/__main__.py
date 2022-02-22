@@ -339,7 +339,6 @@ def Takanashi_about_callback(bot: Bot, update: Update):
 
     try:
         if taka_match:
-            
             query.message.edit_text(
                 text=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
