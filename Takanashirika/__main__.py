@@ -337,7 +337,8 @@ def Takanashi_about_callback(bot: Bot, update: Update):
     try:
         if taka_match:
             query.message.edit_text(
-                text="Sendi Ganteng",
+                text=f"Sendi Ganteng"
+                f"\nSendi Ganteng banget",
                 parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Sendi_next")]]
