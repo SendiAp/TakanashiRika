@@ -36,7 +36,6 @@ from Takanashirika import (
     telethn,
     StartTime,
 )
-from Takanashirika.utils import check_bot_started_users
 from Takanashirika.modules import ALL_MODULES
 from Takanashirika.modules.helper_funcs.chat_status import is_user_admin
 from Takanashirika.modules.helper_funcs.misc import paginate_modules
