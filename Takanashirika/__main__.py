@@ -354,8 +354,13 @@ def Takanashi_about_callback(bot: Bot, update: Update):
                 reply_markup=InlineKeyboardMarkup(
                     [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Skyzu_")]]
                 ),
-            )
+            ),
 
+        # ensure no spinny white circle
+        bot.answer_callback_query(query.id)
+
+    except BadRequest:
+        pass
 
 @run_async
 def get_help(bot: Bot, update: Update):
