@@ -351,29 +351,10 @@ def Takanashi_about_callback(bot: Bot, update: Update):
                      "\n\n Click on button bellow to get basic help for SkyzuRobot.",
                      parse_mode=ParseMode.MARKDOWN,
                      disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(
-                            text="ᴋᴘᴏᴘᴇʀꜱ​", callback_data="kpop_in"
-                        ),
-                        InlineKeyboardButton(
-                            text="ꜱᴜᴅᴏ​", callback_data="Skyzu_notes"
-                        ),
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            text="ꜱᴜᴘᴘᴏʀᴛ​", callback_data="source_"
-                        ),
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            text="ɢᴏ ʙᴀᴄᴋ​", callback_data="sendi_backo"
-                        ),
-                    ],
-                ]
-            ),
-        )
+                     reply_markup=InlineKeyboardMarkup(
+                         [[InlineKeyboardButton(text="Tools", callback_data="kpop_in")]],
+                     ),
+                )
 
     elif kpopers_inline:
         query.message.edit_text(
