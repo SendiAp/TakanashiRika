@@ -27,7 +27,7 @@ def afk(bot: Bot, update: Update):
 
     sql.set_afk(update.effective_user.id, reason)
     fname = update.effective_user.first_name
-    update.effective_message.reply_text("{} Sedang Afk , Mohon Tunggu Online!".format(fname))
+    update.effective_message.reply_text("{} Currently Afk, Please Wait Online!".format(fname))
 
     
 @run_async
@@ -47,7 +47,7 @@ def no_longer_afk(bot: Bot, update: Update):
         try:        
             options = [
           
-            '{} Kembali online!🎉'
+            '{} Back online!🎉'
      
                     ]
             chosen_option = random.choice(options)
@@ -123,8 +123,11 @@ def check_afk(bot, update, user_id, fst_name, userc_id):
 
 
 __help__ = """
+*Comands:*
  ✘ /afk <alasan> : tandai diri Anda sebagai AFK (jauh dari keyboard)
- ✘ brb <reason> : sama dengan perintah afk - tetapi bukan perintah!
+
+*Notes:*
+brb <reason> : sama dengan perintah afk - tetapi bukan perintah!
 Ketika ditandai sebagai AFK, penyebutan apa pun akan dibalas dengan pesan yang menyatakan bahwa Anda tidak tersedia!
 """
 
