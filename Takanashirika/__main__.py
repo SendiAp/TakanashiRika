@@ -330,6 +330,8 @@ def Takanashi_about_callback(bot: Bot, update: Update):
     end_time = time.time()
     ping_time = str(round((end_time - start_time), 2) % 60)
     uptime = get_readable_time((time.time() - StartTime))
+
+ try:
     if query.data == "Sendi_":
         query.message.edit_text(
             text="๏ a powerful group management bot built to help you manage your group easily."
