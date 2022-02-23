@@ -323,72 +323,9 @@ def help_button(bot: Bot, update: Update):
         pass
 
 @run_async
-def kpop_handlers(bot: Bot, update: Update):
-    query = update.callback_query
-    babi_match = re.match(r"Kpop_back\((.+?)\)", query.data)
-    anjing_match = re.match(r"Kpop_", query.data)
-
-    if anjing_match:
-        query.message.edit_text(
-            text="๏ a powerful group management bot built to help you manage your group easily."
-            "\n• I can restrict users."
-            "\n• I can greet users with customizable welcome messages and even set a group's rules."
-            "\n• I have an advanced anti-flood system."
-            "\n• I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc."
-            "\n• I have a note keeping system, blacklists, and even predetermined replies on certain keywords."
-            "\n• I check for admins' permissions before executing any command and more stuffs",
-            parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(
-                            text="ꜱᴘᴇꜱɪᴀʟɪꜱ​", callback_data="Groups_"
-                        ),
-                        InlineKeyboardButton(
-                            text="ʜᴇʟᴘᴍᴇ​", callback_data="help_back"
-                        ),
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            text="sᴜᴘᴘᴏʀᴛ​", callback_data="Sendi_prev"
-                        ),
-                        InlineKeyboardButton(
-                            text="ᴄʀᴇᴅɪᴛs​", callback_data="Skyzu_credit"
-                        ),
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Sendi_back"
-                        ),
-                    ],
-                ]
-            ),
-        )
-
-    elif babi_match:
-        first_name = update.effective_user.first_name
-        uptime = get_readable_time((time.time() - StartTime))
-        query.message.edit_text(
-            PM_START_TEXT.format(
-                escape_markdown(first_name),
-                escape_markdown(uptime),
-                sql.num_users(),
-                sql.num_chats(),
-            ),
-            reply_markup=InlineKeyboardMarkup(buttons),
-            parse_mode=ParseMode.MARKDOWN,
-            timeout=60,
-            disable_web_page_preview=True,
-        )
-
-@run_async
 def Takanashi_about_callback(bot: Bot, update: Update):
     query = update.callback_query
-    back_match = re.match(r"Sendi_back\((.+?)\)", query.data)
-    kontol_match = re.match(r"Sendi_", query.data)
-
-    if kontol_match:
+    if query.data == "Sendi_":
         query.message.edit_text(
             text="๏ a powerful group management bot built to help you manage your group easily."
             "\n• I can restrict users."
@@ -403,7 +340,7 @@ def Takanashi_about_callback(bot: Bot, update: Update):
                 [
                     [
                         InlineKeyboardButton(
-                            text="ꜱᴘᴇꜱɪᴀʟɪꜱ​", callback_data="Kpop_"
+                            text="ꜱᴘᴇꜱɪᴀʟɪꜱ​", callback_data="Sendi_admin"
                         ),
                         InlineKeyboardButton(
                             text="ʜᴇʟᴘᴍᴇ​", callback_data="help_back"
@@ -411,7 +348,7 @@ def Takanashi_about_callback(bot: Bot, update: Update):
                     ],
                     [
                         InlineKeyboardButton(
-                            text="sᴜᴘᴘᴏʀᴛ​", callback_data="Sendi_prev"
+                            text="sᴜᴘᴘᴏʀᴛ​", callback_data="Sendi_notes"
                         ),
                         InlineKeyboardButton(
                             text="ᴄʀᴇᴅɪᴛs​", callback_data="Skyzu_credit"
@@ -426,20 +363,33 @@ def Takanashi_about_callback(bot: Bot, update: Update):
             ),
         )
 
-    elif back_match:
-        first_name = update.effective_user.first_name
-        uptime = get_readable_time((time.time() - StartTime))
+    elif query.data == "Sendi_admin":
         query.message.edit_text(
-            PM_START_TEXT.format(
-                escape_markdown(first_name),
-                escape_markdown(uptime),
-                sql.num_users(),
-                sql.num_chats(),
-            ),
-            reply_markup=InlineKeyboardMarkup(buttons),
+            text=f"*๏ Let's make your group bit effective now*"
+            f"\nCongragulations, {dispatcher.bot.first_name} now ready to manage your group."
+            "\n\n*Admin Tools*"
+            "\nBasic Admin tools help you to protect and powerup your group."
+            "\nYou can ban members, Kick members, Promote someone as admin through commands of bot."
+            "\n\n*Greetings*"
+            "\nLets set a welcome message to welcome new users coming to your group."
+            "\nsend `/setwelcome [message]` to set a welcome message!",
             parse_mode=ParseMode.MARKDOWN,
-            timeout=60,
             disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Skyzu_")]]
+            ),
+        )
+
+    elif query.data == "Sendi_notes":
+        query.message.edit_text(
+            text=f"<b>๏ Setting up notes</b>"
+            f"\nYou can save message/media/audio or anything as notes"
+            f"\nto get a note simply use # at the beginning of a word"
+            f"\n\nYou can also set buttons for notes and filters (refer help menu)",
+            parse_mode=ParseMode.HTML,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Skyzu_")]]
+            ),
         )
 
 @run_async
@@ -643,8 +593,7 @@ def main():
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
    
     about_callback_handler = CallbackQueryHandler(Takanashi_about_callback, pattern=r"Sendi_")
-    about_callback_handler = CallbackQueryHandler(kpop_handlers, pattern=r"Kpop_")
-
+    
 
     # dispatcher.add_handler(test_handler)
     dispatcher.add_handler(start_handler)
