@@ -11,6 +11,7 @@ import traceback
 import requests
 import Takanashirika.modules.sql.users_sql as sql
 from parsel import Selector
+from requests import get
 import json
 from urllib.request import urlopen
 from sys import argv
@@ -326,6 +327,11 @@ def help_button(bot: Bot, update: Update):
 def Takanashi_about_callback(bot: Bot, update: Update):
     query = update.callback_query
     if query.data == "Sendi_":
+    start_time = time.time()
+    requests.get('https://api.telegram.org')
+    end_time = time.time()
+    ping_time = str(round((end_time - start_time), 2) % 60)
+    uptime = get_readable_time((time.time() - StartTime))
         query.message.edit_text(
             text="๏ a powerful group management bot built to help you manage your group easily."
             "\n• I can restrict users."
@@ -333,7 +339,8 @@ def Takanashi_about_callback(bot: Bot, update: Update):
             "\n• I have an advanced anti-flood system."
             "\n• I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc."
             "\n• I have a note keeping system, blacklists, and even predetermined replies on certain keywords."
-            "\n• I check for admins' permissions before executing any command and more stuffs",
+            "\n• I check for admins' permissions before executing any command and more stuffs"
+            "\n\n📡 *Takanashi Rika* ({uptime}) ({ping_time})",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -365,18 +372,15 @@ def Takanashi_about_callback(bot: Bot, update: Update):
 
     elif query.data == "Sendi_admin":
         query.message.edit_text(
-            text=f"*๏ Let's make your group bit effective now*"
-            f"\nCongragulations, {dispatcher.bot.first_name} now ready to manage your group."
-            "\n\n*Admin Tools*"
-            "\nBasic Admin tools help you to protect and powerup your group."
-            "\nYou can ban members, Kick members, Promote someone as admin through commands of bot."
-            "\n\n*Greetings*"
-            "\nLets set a welcome message to welcome new users coming to your group."
-            "\nsend `/setwelcome [message]` to set a welcome message!",
+            text=f"*Notes:*"
+            f"\nHave you ever admired someone? you know Kpopers for sure you are one of the lovers, this is the solution you can find information about your idol."
+            "\n\n*All members can use it:*"
+            "\n ✘ /idol <idol Name> : looking for detailed information about your idol."
+            "\n ✘ /groups <groups Name> : looking for detailed information about your Groups idol.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Skyzu_")]]
+                [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Sendi_")]]
             ),
         )
 
@@ -388,7 +392,7 @@ def Takanashi_about_callback(bot: Bot, update: Update):
             f"\n\nYou can also set buttons for notes and filters (refer help menu)",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Skyzu_")]]
+                [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Sendi_")]]
             ),
         )
 
