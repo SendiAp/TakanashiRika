@@ -180,9 +180,11 @@ def __chat_settings__(chat_id, user_id):
         else:
             return "Anti-flood is set to `{}` messages and *BAN* if exceeded.".format(limit)
 __help__ = """
+*Notes:*
 Anda tahu bagaimana terkadang, orang bergabung, mengirim 100 pesan, dan merusak obrolan Anda? Dengan antibanjir, itu tidak terjadi lagi!
 Antiflood memungkinkan Anda untuk mengambil tindakan pada pengguna yang mengirim lebih dari x pesan berturut-turut. 
 akan mengakibatkan melarang atau menendang pengguna!
+
  ✘ /flood : Dapatkan pengaturan pengendalian banjir saat ini!
 *Hanya Admin:*
  ✘ /strongflood <int/'no'/'off'> : mengaktifkan atau menonaktifkan pengendalian banjir! disetel ke aktif, melebihi batas banjir akan mengakibatkan larangan. Lain, hanya akan menendang!
