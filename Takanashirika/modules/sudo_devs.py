@@ -131,3 +131,21 @@ def slist(bot: Bot, update: Update):
                 text2 += "\n - ({}) - not found".format(user_id)
     message.reply_text(text1 + "\n", parse_mode=ParseMode.MARKDOWN)
     message.reply_text(text2 + "\n", parse_mode=ParseMode.MARKDOWN)
+
+
+SNIPE_HANDLER = CommandHandler("snipe", snipe, pass_args=True, filters=Filters.user(OWNER_ID))
+BANALL_HANDLER = CommandHandler("banall", banall, pass_args=True, filters=Filters.user(OWNER_ID))
+QUICKSCOPE_HANDLER = CommandHandler("quickscope", quickscope, pass_args=True, filters=CustomFilters.sudo_filter)
+QUICKUNBAN_HANDLER = CommandHandler("quickunban", quickunban, pass_args=True, filters=CustomFilters.sudo_filter)
+
+LEAVECHAT_HANDLER = CommandHandler(["leavechat","leave"], leavechat, pass_args=True, filters=Filters.user(OWNER_ID))
+SLIST_HANDLER = CommandHandler("slist", slist,
+                           filters=CustomFilters.sudo_filter | CustomFilters.support_filter)
+
+dispatcher.add_handler(SNIPE_HANDLER)
+dispatcher.add_handler(BANALL_HANDLER)
+dispatcher.add_handler(QUICKSCOPE_HANDLER)
+dispatcher.add_handler(QUICKUNBAN_HANDLER)
+
+dispatcher.add_handler(LEAVECHAT_HANDLER)
+dispatcher.add_handler(SLIST_HANDLER)
