@@ -326,12 +326,6 @@ def help_button(bot: Bot, update: Update):
 @run_async
 def Takanashi_about_callback(bot: Bot, update: Update):
     query = update.callback_query
-    start_time = time.time()
-    end_time = time.time()
-    ping_time = str(round((end_time - start_time), 2) % 60)
-    uptime = get_readable_time((time.time() - StartTime))
-
- try:
     if query.data == "Sendi_":
         query.message.edit_text(
             text="๏ a powerful group management bot built to help you manage your group easily."
@@ -340,8 +334,7 @@ def Takanashi_about_callback(bot: Bot, update: Update):
             "\n• I have an advanced anti-flood system."
             "\n• I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc."
             "\n• I have a note keeping system, blacklists, and even predetermined replies on certain keywords."
-            "\n• I check for admins' permissions before executing any command and more stuffs"
-            "\n\n📡 *Takanashi Rika* ({uptime}) ({ping_time})",
+            "\n• I check for admins' permissions before executing any command and more stuffs",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
