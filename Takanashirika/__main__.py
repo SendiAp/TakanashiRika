@@ -383,9 +383,9 @@ def Takanashi_about_callback(bot: Bot, update: Update):
         )
 
 @run_async
-def Groups_about_callback(bot: Bot, update: Update):
+def teks_about_callback(bot: Bot, update: Update):
     query = update.callback_query
-    if query.data == "Groups_":
+    if query.data == "babi_lu":
         query.message.edit_text(
             text="Here is the help for the *Kpopers* module:"
             "\n\n**Plugins Kpopers:**"
@@ -601,7 +601,7 @@ def main():
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
    
     about_callback_handler = CallbackQueryHandler(Takanashi_about_callback, pattern=r"Sendi_")
-    about_callback_handler = CallbackQueryHandler(Groups_about_callback, pattern=r"Groups_")
+    about_callback_handler = CallbackQueryHandler(teks_about_callback, pattern=r"babi_lu")
    
 
     # dispatcher.add_handler(test_handler)
