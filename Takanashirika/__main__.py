@@ -325,6 +325,7 @@ def help_button(bot: Bot, update: Update):
 @run_async
 def Takanashi_about_callback(bot: Bot, update: Update):
     query = update.callback_query
+    back_match = re.match(r"Sendi_back\((.+?)\)", query.data)
     kontol_match = re.match(r"Sendi_", query.data)
 
     if kontol_match:
@@ -358,11 +359,27 @@ def Takanashi_about_callback(bot: Bot, update: Update):
                     ],
                     [
                         InlineKeyboardButton(
-                            text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Sendi_next"
+                            text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Sendi_back"
                         ),
                     ],
                 ]
             ),
+        )
+
+    elif back_match:
+        first_name = update.effective_user.first_name
+        uptime = get_readable_time((time.time() - StartTime))
+        query.message.edit_text(
+            PM_START_TEXT.format(
+                escape_markdown(first_name),
+                escape_markdown(uptime),
+                sql.num_users(),
+                sql.num_chats(),
+            ),
+            reply_markup=InlineKeyboardMarkup(buttons),
+            parse_mode=ParseMode.MARKDOWN,
+            timeout=60,
+            disable_web_page_preview=True,
         )
 
 @run_async
