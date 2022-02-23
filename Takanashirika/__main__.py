@@ -326,12 +326,13 @@ def help_button(bot: Bot, update: Update):
 @run_async
 def Takanashi_about_callback(bot: Bot, update: Update):
     query = update.callback_query
-    if query.data == "Sendi_":
     start_time = time.time()
     requests.get('https://api.telegram.org')
     end_time = time.time()
     ping_time = str(round((end_time - start_time), 2) % 60)
     uptime = get_readable_time((time.time() - StartTime))
+
+    if query.data == "Sendi_":
         query.message.edit_text(
             text="๏ a powerful group management bot built to help you manage your group easily."
             "\n• I can restrict users."
