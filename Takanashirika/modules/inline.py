@@ -36,7 +36,7 @@ from youtubesearchpython import VideosSearch
 from Takanashirika.conf import get_str_key
 from Takanashirika.pyrogramee.inlinehelper import *
 from Takanashirika.more.pluginhelpers import fetch, json_prettify
-from Takanashirika.pyrogramee.pyrogram import pbot as app
+from Takanashirika import pbot as app
 
 OPENWEATHERMAP_ID = get_str_key("API_OPENWEATHER", "")
 TIME_API_KEY = get_str_key("TIME_API_KEY", required=False)
