@@ -383,24 +383,6 @@ def Takanashi_about_callback(bot: Bot, update: Update):
         )
 
 @run_async
-def teks_about_callback(bot: Bot, update: Update):
-    query = update.callback_query
-    if query.data == "babi_lu":
-        query.message.edit_text(
-            text="Here is the help for the *Kpopers* module:"
-            "\n\n**Plugins Kpopers:**"
-            "\n• /groups (Groups Name) - looking for your Kpopers Groups."
-            "\n• /idol (idol Name) - looking for your Kpopers Idol."
-            "\n\n**Example:**"
-            "\n`/idol Jisoo` / `/groups BTS`",
-            parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="🔙​", callback_data="Sendi_")]]
-            ),
-        )
-
-@run_async
 def get_help(bot: Bot, update: Update):
     chat = update.effective_chat  # type: Optional[Chat]
     args = update.effective_message.text.split(None, 1)
@@ -601,8 +583,6 @@ def main():
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
    
     about_callback_handler = CallbackQueryHandler(Takanashi_about_callback, pattern=r"Sendi_")
-    about_callback_handler = CallbackQueryHandler(teks_about_callback, pattern=r"babi_lu")
-   
 
     # dispatcher.add_handler(test_handler)
     dispatcher.add_handler(start_handler)
