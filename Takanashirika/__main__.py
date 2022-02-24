@@ -70,8 +70,7 @@ def get_readable_time(seconds: int) -> str:
 PM_START_TEXT = """
 Hello *{}*!
 ────────────────────────
-✪ I'm an anime theme bot designed to help manage your telegram group with a lot features.
-✪ Maintained by @pikyus1 ✨
+📡 *Takanashi Rika:* `{}`
 ────────────────────────
 Hit the /help to see available command.
 """
@@ -328,13 +327,11 @@ def Takanashi_about_callback(bot: Bot, update: Update):
     query = update.callback_query
     if query.data == "Sendi_":
         query.message.edit_text(
-            text="๏ a powerful group management bot built to help you manage your group easily."
-            "\n• I can restrict users."
-            "\n• I can greet users with customizable welcome messages and even set a group's rules."
-            "\n• I have an advanced anti-flood system."
-            "\n• I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc."
-            "\n• I have a note keeping system, blacklists, and even predetermined replies on certain keywords."
-            "\n• I check for admins' permissions before executing any command and more stuffs",
+            text="You know how hard it is to manage groups where too many inappropriate messages should be sent?."
+            "\n\n• Sometimes we want to send a welcome to a new group member, I have a solution for you."
+            "\n\n• Takanashirika is a bot manager or helps manage your groups, this bot is an anime-themed developer named after an anime that we have often watched before."
+            "\n\n• Use this bot well, don't ever abuse this bot, if there are problems, please report this bot developer so that the bot will be fixed soon."
+            "\n\n• Use the /help command to get all the required commands for your groups..",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
