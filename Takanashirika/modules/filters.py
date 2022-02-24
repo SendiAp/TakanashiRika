@@ -8,16 +8,16 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, MessageHandler, DispatcherHandlerStop, run_async
 from telegram.utils.helpers import escape_markdown
 
-from JisooX import dispatcher, LOGGER
-from JisooX.modules.disable import DisableAbleCommandHandler
-from JisooX.modules.helper_funcs.chat_status import user_admin
-from JisooX.modules.helper_funcs.extraction import extract_text
-from JisooX.modules.helper_funcs.filters import CustomFilters
-from JisooX.modules.helper_funcs.misc import build_keyboard
-from JisooX.modules.helper_funcs.string_handling import split_quotes, button_markdown_parser
-from JisooX.modules.sql import cust_filters_sql as sql
+from Takanashirika import dispatcher, LOGGER
+from Takanashirika.modules.disable import DisableAbleCommandHandler
+from Takanashirika.modules.helper_funcs.chat_status import user_admin
+from Takanashirika.modules.helper_funcs.extraction import extract_text
+from Takanashirika.modules.helper_funcs.filters import CustomFilters
+from Takanashirika.modules.helper_funcs.misc import build_keyboard
+from Takanashirika.modules.helper_funcs.string_handling import split_quotes, button_markdown_parser
+from Takanashirika.modules.sql import cust_filters_sql as sql
 
-from JisooX.modules.connection import connected
+from Takanashirika.modules.connection import connected
 
 HANDLER_GROUP = 10
 BASIC_FILTER_STRING = "*Filters in this chat:*\n"
