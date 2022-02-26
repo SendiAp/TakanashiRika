@@ -252,7 +252,6 @@ def error_callback(bot, update, error):
 def help_button(bot: Bot, update: Update):
     query = update.callback_query
     mod_match = re.match(r"help_module\((.+?)\)", query.data)
-    tools_match = re.match(r"help_tools\((.+?)\)", query.data)
     prev_match = re.match(r"help_prev\((.+?)\)", query.data)
     next_match = re.match(r"help_next\((.+?)\)", query.data)
     back_match = re.match(r"help_back", query.data)
@@ -274,16 +273,6 @@ def help_button(bot: Bot, update: Update):
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
                     [[InlineKeyboardButton(text="🔙", callback_data="help_back")]],
-                ),
-            )
-
-        elif tools_match:
-            tools_match = int(prev_match.group(1))
-            query.message.edit_text(
-                text=HELP_STRINGS,
-                parse_mode=ParseMode.MARKDOWN,
-                reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="Tools", callback_data="help_module")]],
                 ),
             )
 
