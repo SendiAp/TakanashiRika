@@ -228,13 +228,6 @@ else:
     except Exception:
         spam_watch = None
         
-if STRING_SESSION:
-    # pylint: disable=invalid-name
-    bot = TelegramClient(StringSession(STRING_SESSION), TELETHON_ID, TELETHON_HASH)
-else:
-    # pylint: disable=invalid-name
-    bot = TelegramClient("Takanashirika", TELETHON_ID, TELETHON_HASH)
-
 # Load at end to ensure all prev variables have been set
 from Takanashirika.modules.helper_funcs.handlers import CustomCommandHandler, CustomRegexHandler, CustomMessageHandler
 
