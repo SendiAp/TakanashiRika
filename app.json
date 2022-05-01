@@ -11,23 +11,23 @@
    "env": {
       "APP_ID": {
          "description": "Dapatkan nilai ini dari my.telegram.org! Tolong jangan mencuri",
-         "value": "",
-         "required": true
+         "required": true,
+         "value": "5341004"
       },
       "APP_HASH": {
          "description": "Dapatkan nilai ini dari my.telegram.org! Tolong jangan mencuri",
-         "value": "",
-         "required": true
+         "required": true,
+         "value": "49660f97ddc3eae70ef5b64595af60a5"
       },
       "HEROKU_API_KEY": {
         "description": "Kunci API Heroku Anda, dapatkan dari 'https://dashboard.heroku.com/account'",
         "required": true,
-         "value": ""
+         "value": "cafed947-82f0-43b9-bd2c-7ee2cab00234"
       },
       "HEROKU_APP_NAME": {
         "description": "Masukkan nama aplikasi Heroku di sini (Harus nama yang sama persis dengan input Anda di atas).",
         "required": true,
-         "value": ""
+         "value": "takanashibot"
       },
       "REM_BG_API_KEY": {
          "description": "Masukkan kunci Hapus Latar Belakang Api.",
@@ -37,7 +37,7 @@
       "BOT_USERNAME": {
          "description": "Masukkan nama pengguna bot Anda.",
          "required": true,
-         "value": ""
+         "value": "@Takanashi_RikkaBot"
       },
       "MESSAGE_DUMP": {
          "description": "opsional: obrolan tempat menyimpan pesan tersimpan yang Anda balas, untuk menghentikan orang menghapus pesan lama mereka",
@@ -70,27 +70,27 @@
       "DEV_USERS": {
          "description": "ID pengguna yang merupakan Dev (bisa menggunakan /py etc.)",
          "required": false,
-         "value": ""    
+         "value": "1307579425"    
       },
       "SUDO_USERS": {
          "description": "Daftar ID pengguna yang dipisahkan spasi yang ingin Anda tetapkan sebagai pengguna sudo.",
          "required": false,
-         "value": ""
+         "value": "1307579425"
       },
       "SUPPORT_USERS": {
          "description": "Daftar ID pengguna yang dipisahkan spasi yang ingin Anda tetapkan sebagai pengguna dukungan (hanya izin gban).",
          "required": false,
-         "value": ""
+         "value": "1307579425"
       },
       "TOKEN": {
          "description": "bot Anda token.",
          "required": true,
-         "value": ""
+         "value": "2020103277:AAH8dY6409qU9P7k2uXzKuXtTNB6lf6TmOI"
       },
       "URL": {
          "description": "Itu Heroku App URL :-  https://<appname>.herokuapp.com/",
          "required": false,
-         "value": "https://<appname>.herokuapp.com/"
+         "value": "https://takanashibot.herokuapp.com/"
       }
    },
    "keywords": [
