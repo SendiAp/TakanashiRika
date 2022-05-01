@@ -79,11 +79,3 @@ def resize_image(image):
     im.save(image, "PNG")
 
 
-__help__ = """
-Saya dapat mengunggah file ke Telegraph
-
- ✘ /tm :Dapatkan Tautan Telegraf Media Balasan
- ✘ /txt :Dapatkan Tautan Telegraf dari Teks Balasan
-"""
-
-__mod_name__ = "Telegraph"
