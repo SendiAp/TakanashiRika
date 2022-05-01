@@ -338,12 +338,12 @@ def Takanashi_about_callback(bot: Bot, update: Update):
                             text="sᴜᴘᴘᴏʀᴛ​", callback_data="Sendi_notes"
                         ),
                         InlineKeyboardButton(
-                            text="ᴄʀᴇᴅɪᴛs​", callback_data="Skyzu_credit"
+                            text="ɢɪᴛʜᴜʙ​", callback_data="Sendi_github"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Sendi_back"
+                            text="ᴄʟᴏꜱᴇ", callback_data="Sendi_back"
                         ),
                     ],
                 ]
@@ -352,11 +352,10 @@ def Takanashi_about_callback(bot: Bot, update: Update):
 
     elif query.data == "Sendi_admin":
         query.message.edit_text(
-            text=f"*Notes:*"
-            f"\nHave you ever admired someone? you know Kpopers for sure you are one of the lovers, this is the solution you can find information about your idol."
-            "\n\n*All members can use it:*"
-            "\n ✘ /idol <idol Name> : looking for detailed information about your idol."
-            "\n ✘ /groups <groups Name> : looking for detailed information about your Groups idol.",
+            text=f"*All members can use it.*"
+            "\n✘ /tr (language code) as reply to a long message."
+            "\n✘ /tm :Dapatkan Tautan Telegraf Media Balasan."
+            "\n✘ /txt :Dapatkan Tautan Telegraf dari Teks Balasan.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -366,13 +365,36 @@ def Takanashi_about_callback(bot: Bot, update: Update):
 
     elif query.data == "Sendi_notes":
         query.message.edit_text(
-            text=f"<b>๏ Setting up notes</b>"
-            f"\nYou can save message/media/audio or anything as notes"
-            f"\nto get a note simply use # at the beginning of a word"
-            f"\n\nYou can also set buttons for notes and filters (refer help menu)",
+            text=f"<b>Terimakasih Atas Semua Kerjasamanya❤️</b>"
+            f"\n\n👼 [Sendi](t.me/pikyus1) [Developer]"
+            f"\n🥳 [CurhatBarengBottyBot](t.me/CurhatBarengBottyBot) [Support]"
+            f"\n🥰 [Rose-Userbot](https://t.me/Rose_Userbot) [Support]"
+            f"\n🦾 [Kopi](https://t.me/KetikaOtakPerluInspirasi) [Support]"
+            f"\n🫂 [Kopicu](t.me/Kopicubot) [Support]"
+            f"\n🔥 [BottyCu](https://t.me/BottyCu) [Support]"
+            f"\n☠️ [KopiChannel](https://t.me/kopi_channel) [Support]"
+            f"\n🤖 [MenuBottyCuBot](https://t.me/MenuBottyCuBot) [Support]"
+            f"\n🔐 [SM•Project](https://t.me/fckyoupeople1) [Support]",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Sendi_")]]
+            ),
+        )
+
+    elif query.data == "Sendi_github":
+        query.message.edit_text(
+            text=f"*Support Me As Your Friend💋*",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(text="ɢɪᴛʜᴜʙ", url="https://github.com/SendiAp"),
+                    ],
+                    [
+                        InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Sendi_"),
+                    ],
+                ]
             ),
         )
 
