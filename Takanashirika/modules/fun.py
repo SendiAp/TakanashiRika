@@ -6,7 +6,7 @@ from typing import List
 from telegram import Bot, Update, ParseMode
 from telegram.ext import run_async
 
-import JisooX.modules.fun_strings as fun_strings
+import Takanashirika.modules.fun_strings as fun_strings
 from Takanashirika import dispatcher
 from Takanashirika.modules.disable import DisableAbleCommandHandler
 from Takanashirika.modules.helper_funcs.chat_status import is_user_admin
