@@ -353,7 +353,7 @@ def Takanashi_about_callback(bot: Bot, update: Update):
     elif query.data == "Sendi_admin":
         query.message.edit_text(
             text=f"*All members can use it.*"
-            "\n✘ /tr (language code) as reply to a long message."
+            "\n✘ /tr (language code) sebagai balasan untuk pesan panjang."
             "\n✘ /tm :Dapatkan Tautan Telegraf Media Balasan."
             "\n✘ /txt :Dapatkan Tautan Telegraf dari Teks Balasan.",
             parse_mode=ParseMode.MARKDOWN,
@@ -366,18 +366,25 @@ def Takanashi_about_callback(bot: Bot, update: Update):
     elif query.data == "Sendi_notes":
         query.message.edit_text(
             text=f"<b>Terimakasih Atas Semua Kerjasamanya❤️</b>"
-            f"\n\n👼 [Sendi](t.me/pikyus1) [Developer]"
-            f"\n🥳 [CurhatBarengBottyBot](t.me/CurhatBarengBottyBot) [Support]"
-            f"\n🥰 [Rose-Userbot](https://t.me/Rose_Userbot) [Support]"
-            f"\n🦾 [Kopi](https://t.me/KetikaOtakPerluInspirasi) [Support]"
-            f"\n🫂 [Kopicu](t.me/Kopicubot) [Support]"
-            f"\n🔥 [BottyCu](https://t.me/BottyCu) [Support]"
-            f"\n☠️ [KopiChannel](https://t.me/kopi_channel) [Support]"
-            f"\n🤖 [MenuBottyCuBot](https://t.me/MenuBottyCuBot) [Support]"
-            f"\n🔐 [SM•Project](https://t.me/fckyoupeople1) [Support]",
+            f"\n\n👼 @pikyus1 [Developer]"
+            f"\n🥳 @CurhatBarengBottyBot [Support]"
+            f"\n🥰 @Rose_Userbot [Support]"
+            f"\n🦾 @KetikaOtakPerluInspirasi) [Support]"
+            f"\n🫂 @Kopicubot [Support]"
+            f"\n🔥 @BottyCu [Support]"
+            f"\n☠️ @kopi_channel [Support]"
+            f"\n🤖 @MenuBottyCuBot [Support]"
+            f"\n🔐 @fckyoupeople1 [Support]",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Sendi_")]]
+                [
+                    [
+                        InlineKeyboardButton(text="ᴀᴅᴅ ꜱᴜᴘᴘᴏʀᴛ", callback_data="Sendi_hubungi"),
+                    ],
+                    [
+                        InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Sendi_"),
+                    ],
+                ]
             ),
         )
 
@@ -393,6 +400,24 @@ def Takanashi_about_callback(bot: Bot, update: Update):
                     ],
                     [
                         InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Sendi_"),
+                    ],
+                ]
+            ),
+        )
+
+    elif query.data == "Send_hubungi":
+        query.message.edit_text(
+            text=f"🇮🇩 Untuk Menambahkan Beberapa Support Groups / Bot / Akun Telegram Dan Lain Lain Silahkan Hubungi Akun ini"
+            text=f"\n🥳 To Add Some Support Groups / Bots / Telegram Accounts And Others Please Contact This Account",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(text="ᴄᴀʟʟ ɴᴏᴡ", url="t.me/pikyus1"),
+                    ],
+                    [
+                        InlineKeyboardButton(text="ɢᴏ ʙᴀᴄᴋ​", callback_data="Sendi_notes"),
                     ],
                 ]
             ),
