@@ -405,10 +405,10 @@ def Takanashi_about_callback(bot: Bot, update: Update):
             ),
         )
 
-    elif query.data == "Send_hubungi":
+    elif query.data == "Sendi_hubungi":
         query.message.edit_text(
-            text=f"🇮🇩 Untuk Menambahkan Beberapa Support Groups / Bot / Akun Telegram Dan Lain Lain Silahkan Hubungi Akun ini"
-            text=f"\n🥳 To Add Some Support Groups / Bots / Telegram Accounts And Others Please Contact This Account",
+            text=f"🇮🇩 Untuk Menambahkan Beberapa Support Groups,Bot,Akun,telegram Dan Lain Lain Silahkan Hubungi Akun ini"
+            text=f"\n🥳 To Add Some Support Groups Bots Telegram Accounts And Others Please Contact This Account",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
