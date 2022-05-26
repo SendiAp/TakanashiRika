@@ -365,11 +365,11 @@ def Takanashi_about_callback(bot: Bot, update: Update):
 
     elif query.data == "Sendi_notes":
         query.message.edit_text(
-            text=f"<b>Terimakasih Atas Semua Kerjasamanya❤️</b>"
+            text=f"<b>Thank you for all the cooperation❤️</b>"
             f"\n\n👼 @pikyus1 [Developer]"
             f"\n🥳 @CurhatBarengBottyBot [Support]"
             f"\n🥰 @Rose_Userbot [Support]"
-            f"\n🦾 @KetikaOtakPerluInspirasi) [Support]"
+            f"\n🦾 @KetikaOtakPerluInspirasi [Support]"
             f"\n🫂 @Kopicubot [Support]"
             f"\n🔥 @BottyCu [Support]"
             f"\n☠️ @kopi_channel [Support]"
@@ -407,8 +407,7 @@ def Takanashi_about_callback(bot: Bot, update: Update):
 
     elif query.data == "Sendi_hubungi":
         query.message.edit_text(
-            text=f"🇮🇩 Untuk Menambahkan Beberapa Support Groups,Bot,Akun,telegram Dan Lain Lain Silahkan Hubungi Akun ini"
-                 f"\n🥳 To Add Some Support Groups Bots Telegram Accounts And Others Please Contact This Account",
+            text=f"to add Some Support Groups Bots Telegram Accounts And Others Please Contact This Account.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
